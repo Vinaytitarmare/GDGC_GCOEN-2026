@@ -14,10 +14,10 @@ const Navbar = () => {
 
   // List of menu items and their routes
   const menuItems = [
-    { name: "Home", path: "/", width: "md:w-[242px]" },
-    { name: "Events", path: "/Events", width: "md:w-[243px]" },
-    { name: "Teams", path: "/Teams", width: "md:w-[245px]" },
-    { name: "Contact us", path: "/ContactUs", width: "md:w-[302px]" },
+    { name: "Home", path: "/", width: "md:w-[197px]" },
+    { name: "Events", path: "/Events", width: "md:w-[197px]" },
+    { name: "Teams", path: "/Teams", width: "md:w-[199px]" },
+    { name: "Contact us", path: "/ContactUs", width: "md:w-[245px]" },
   ];
 
   return (
@@ -54,14 +54,14 @@ const Navbar = () => {
       <div
         className={`z-[9999px] md:absolute md:top-6 md:left-1/2 md:-translate-x-1/2 fixed h-full bg-blue md:bg-transparent shadow-lg transform transition-transform duration-300 ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
-        } md:translate-x-0 md:shadow-none md:flex md:justify-center mt-0 top-0 md:items-center w-[300px] md:w-full md:max-w-[1562px] md:h-[65px]`}
+        } md:translate-x-0 md:shadow-none md:flex md:justify-center mt-0 top-0 md:items-center w-[300px] md:w-full md:max-w-[1260px] md:h-[65px]`}
       >
         <div
           className="flex flex-col bg-blue md:bg-black md:flex-row md:items-center md:justify-start gap-3 md:gap-0 overflow-hidden border-black w-full md:h-[65px] md:px-0"
           style={{ borderWidth: 3, borderRadius: 24 }}
         >
           <button
-            className="flex items-center bg-white border-black px-[15px] py-[14px] md:w-[415px] md:h-[65px]"
+            className="flex items-center bg-white border-black px-[15px] py-[14px] md:w-[337px] md:h-[65px]"
             style={{ borderWidth: 2, borderRadius: 24 }}
             onClick={() => {
               router.push("/");
@@ -75,7 +75,7 @@ const Navbar = () => {
           </button>
 
           <div
-            className="hidden md:block bg-white border-black md:w-[105px] md:h-[65px]"
+            className="hidden md:block bg-white border-black md:w-[85px] md:h-[65px]"
             style={{ borderWidth: 2, borderRadius: 24 }}
           ></div>
 
