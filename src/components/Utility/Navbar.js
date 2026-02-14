@@ -24,9 +24,9 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="fixed w-full z-50">
+    <div className="relative w-full z-50">
       {/* Mobile Menu Header */}
-      <div className="top-0 md:hidden fixed w-full right-0 flex justify-between items-center p-5 bg-blue">
+      <div className="top-0 md:hidden relative w-full right-0 flex justify-between items-center p-5 bg-blue">
         <div className="flex items-center gap-5">
           <button
             className="text-white text-2xl focus:outline-none"
@@ -55,17 +55,18 @@ const Navbar = () => {
 
       {/* Navbar Container */}
       <div
-        className={`z-[9999px] md:absolute md:top-6 md:left-1/2 md:-translate-x-1/2 fixed h-full bg-blue md:bg-transparent shadow-lg transform transition-transform duration-300 ${
+        className={`z-[9999px] md:relative md:top-10 md:left-1/2 relative bg-blue md:bg-transparent shadow-lg transform transition-transform duration-300 ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
-        } md:translate-x-0 md:shadow-none md:flex md:justify-center mt-0 top-0 md:items-center w-[300px] md:w-full md:max-w-[1260px] md:h-[65px]`}
+        } md:translate-x-0 md:shadow-none md:flex md:justify-center md:items-center w-[300px] md:w-fit md:h-[65px]`}
+        style={{ transform: "translateX(-50%)" }}
       >
         <div
-          className="flex flex-col bg-blue md:bg-black md:flex-row md:items-center md:justify-start gap-3 md:gap-0 overflow-hidden border-black w-full md:h-[65px] md:px-0"
-          style={{ borderWidth: 3, borderRadius: 24 }}
+          className="flex flex-col bg-blue md:bg-black md:flex-row md:items-center md:justify-center gap-3 md:gap-0 overflow-visible border-black w-full md:h-[65px] md:px-0"
+          style={{ borderWidth: 0, borderRadius: 24 }}
         >
           <button
             className="flex items-center border-black px-[15px] py-[14px] md:w-[337px] md:h-[65px] transition-colors"
-            style={{ borderWidth: 2, borderRadius: 24, backgroundColor: hoverGDGC ? "#f8d8d8" : "white" }}
+            style={{ borderWidth: 2, borderRadius: 24, backgroundColor: hoverGDGC ? "#f8d8d8" : "white", marginRight: -1 }}
             onClick={() => {
               router.push("/");
               setMenuOpen(false);
@@ -77,11 +78,11 @@ const Navbar = () => {
             <span className={`text-black text-[29px] leading-[44px] ml-[29px] whitespace-nowrap ${poppins400.className}`}>
               GDGC GCOEN
             </span>
-          </button>
+           </button>
 
           <div
             className="hidden md:block bg-white border-black md:w-[85px] md:h-[65px]"
-            style={{ borderWidth: 2, borderRadius: 24 }}
+            style={{ borderWidth: 2, borderRadius: 24, marginLeft: -1, marginRight: -1 }}
           ></div>
 
           {menuItems.map((item) => {
@@ -94,7 +95,7 @@ const Navbar = () => {
               <button
                 key={item.name}
                 className={`flex items-center justify-center border-black text-black text-[29px] leading-[44px] md:h-[65px] ${item.width} transition-colors ${poppins400.className}`}
-                style={{ borderWidth: 2, borderRadius: 24, backgroundColor: bgColor }}
+                style={{ borderWidth: 2, borderRadius: 24, backgroundColor: bgColor, marginLeft: -1, marginRight: -1 }}
                 onClick={() => {
                   router.push(item.path);
                   setMenuOpen(false);
