@@ -19,8 +19,9 @@ const Navbar = () => {
   const menuItems = [
     { name: "Home", path: "/", width: "md:w-[197px]" },
     { name: "Events", path: "/Events", width: "md:w-[197px]" },
+    { name: "Blogs", path: "/Blogs", width: "md:w-[197px]" },
     { name: "Teams", path: "/Teams", width: "md:w-[199px]" },
-    { name: "Contact us", path: "/ContactUs", width: "md:w-[245px]" },
+    { name: "Contact Us", path: "/ContactUs", width: "md:w-[245px]" },
   ];
 
   return (
@@ -78,11 +79,6 @@ const Navbar = () => {
               GDGC GCOEN
             </span>
            </button>
-
-          <div
-            className="hidden md:block bg-white border-black md:w-[85px] md:h-[65px]"
-            style={{ borderWidth: 2, borderRadius: 24, marginLeft: -1, marginRight: -1 }}
-          ></div>
 
           {menuItems.map((item) => {
             const isHovered = hoverItem === item.name;
