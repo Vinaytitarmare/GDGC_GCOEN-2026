@@ -20,7 +20,7 @@ const BlogsCard = ({
     <div
     data-aos="fade-up"
 
-      className={`${rethink_sans400.className}   justify-between flex flex-col gap-2 border-solid border-2 border-black rounded-2xl`}
+      className={`${rethink_sans400.className} justify-between flex flex-col gap-2 border-solid border-2 border-black rounded-2xl aos-init`}
     >
       <div className=" w-full h-52 relative overflow-hidden flex-none">
         {!isImageLoaded && (

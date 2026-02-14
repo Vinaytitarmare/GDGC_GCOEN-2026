@@ -65,10 +65,10 @@ const Footer = () => {
           </div>
 
           {/* Social Links Section for Mobile */}
-          <div 
+            <div 
               rel="noopener noreferrer"
               data-aos="fade-right"
-          className="lg:hidden flex flex-row gap-x-3 justify-center mt-8">
+            className="lg:hidden flex flex-row gap-x-3 justify-center mt-8 aos-init">
             {socialLinks.map(({ icon, link, label }, index) => (
               <SocialLink
                 key={index}

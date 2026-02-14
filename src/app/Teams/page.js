@@ -11,7 +11,7 @@ import React from "react";
 const TeamSection = () => {
   return (
     <div className="container flex-col flex gap-10 mx-auto  p-5  mt-20 md:mt-0">
-      <div className="" data-aos="fade-up">
+      <div className="aos-init" data-aos="fade-up">
         <h2
           className={`text-[32px] font-bold mb-8 ${rethink_sans800.className} `}
         >
@@ -78,7 +78,7 @@ export default TeamSection;
 
 const TeamsCard = ({ TeamName, teamData }) => {
   return (
-    <div className="" data-aos="fade-up flex   ">
+    <div className="aos-init" data-aos="fade-up flex   ">
       <h2
         className={`text-[32px] font-bold mb-8 ${rethink_sans800.className} `}
       >
