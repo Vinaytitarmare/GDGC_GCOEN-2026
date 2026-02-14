@@ -1,26 +1,40 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import DefaultBtn from "../Utility/DefaultBtn";
+
+const LogoImage = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <img
+      src="/gdgc.png"
+      alt="GDGC Logo"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      suppressHydrationWarning
+      style={{
+        position: "absolute",
+        top: "66px",
+        left: "50%",
+        transform: `translateX(-50%) scale(${isHovered ? 1.05 : 1})`,
+        width: "195px",
+        height: "105px",
+        opacity: isHovered ? 0.9 : 1,
+        cursor: "pointer",
+        transition: "all 0.3s ease",
+      }}
+    />
+  );
+};
 
 const LandingPage = () => {
   const router = useRouter();
 
   return (
     <div className="flex flex-col container m-auto mt-4 md:-mt-24 items-center justify-center min-h-screen bg-white px-2 sm:px-4 relative">
-      <img
-        src="/gdgc.png"
-        alt="GDGC Logo"
-        style={{
-          position: "absolute",
-          top: "66px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: "195px",
-          height: "105px",
-        }}
-      />
+      <LogoImage />
       <h1
         style={{
           position: "absolute",
@@ -69,8 +83,9 @@ const LandingPage = () => {
           left: "50%",
           transform: "translateX(-50%)",
           top: "538px",
-          width: "1136px",
+          width: "1016px",
           height: "430px",
+          zIndex: "10",
         }}
       />
       <div
@@ -131,6 +146,18 @@ const LandingPage = () => {
           loading="lazy"
         />
       </div>
+      <div
+        style={{
+          position: "absolute",
+          width: "1337px",
+          height: "362px",
+          left: "50%",
+          transform: "translateX(-50%)",
+          top: "850px",
+          background: "transparent",
+          border: "2px solid #000000",
+          borderRadius: "62px",          zIndex: "1",        }}
+      ></div>
     </div>
   );
 };

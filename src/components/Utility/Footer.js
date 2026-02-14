@@ -21,8 +21,8 @@ const SocialLink = ({ href, imageAlt, imageSrc }) => {
         alt={imageAlt}
         suppressHydrationWarning
         style={{
-          width: "177px",
-          height: "55px",
+          width: "140px",
+          height: "44px",
           opacity: isHovered ? 0.95 : 1,
           transform: isHovered ? "scale(1.02)" : "scale(1)",
           transition: "all 0.3s ease",
@@ -30,6 +30,28 @@ const SocialLink = ({ href, imageAlt, imageSrc }) => {
         }}
       />
     </a>
+  );
+};
+
+const LogoImage = () => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <img
+      src={isHovered ? "/goldengdg.png" : "/whitegdgc.png"}
+      alt="GDGC Logo"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      suppressHydrationWarning
+      style={{
+        position: "absolute",
+        right: "20px",
+        width: "475px",
+        height: "100px",
+        cursor: "pointer",
+        transition: "all 0.3s ease",
+      }}
+    />
   );
 };
 
@@ -44,8 +66,8 @@ const Footer = () => {
           <div
             className="border-2 border-black rounded-[62px] bg-white relative flex justify-center items-center"
             style={{
-              width: "1540px",
-              height: "221px",
+              width: "1250px",
+              height: "180px",
               maxWidth: "95vw",
               display: "flex",
               alignItems: "center",
@@ -56,14 +78,14 @@ const Footer = () => {
             <div
               style={{
                 position: "absolute",
-                left: "29px",
+                left: "20px",
                 display: "flex",
                 flexDirection: "column",
-                gap: "12px",
+                gap: "8px",
               }}
             >
               {/* Top Row - Instagram, WhatsApp, LinkedIn */}
-              <div style={{ display: "flex", gap: "12px" }}>
+              <div style={{ display: "flex", gap: "8px" }}>
                 <SocialLink
                   href="https://www.instagram.com/gdgcgcoen/"
                   imageAlt="Instagram"
@@ -81,7 +103,7 @@ const Footer = () => {
                 />
               </div>
               {/* Bottom Row - X, YouTube */}
-              <div style={{ display: "flex", gap: "12px" }}>
+              <div style={{ display: "flex", gap: "8px" }}>
                 <SocialLink
                   href="https://x.com/GDGCGcoen"
                   imageAlt="X"
@@ -99,20 +121,11 @@ const Footer = () => {
               src="/gdgfooter.png"
               alt="Vector"
               style={{
-                width: "96px",
-                height: "52px",
+                width: "75px",
+                height: "40px",
               }}
             />
-            <img
-              src="/whitegdgc.png"
-              alt="GDGC Logo"
-              style={{
-                position: "absolute",
-                right: "29px",
-                width: "601px",
-                height: "128px",
-              }}
-            />
+            <LogoImage />
           </div>
         </div>
 
