@@ -61,7 +61,7 @@ const Navbar = () => {
           style={{ borderWidth: 3, borderRadius: 24 }}
         >
           <button
-            className="flex items-center bg-white border-black px-[15px] py-[14px] md:w-[337px] md:h-[65px]"
+            className="flex items-center bg-white hover:bg-[#f28b82] border-black px-[15px] py-[14px] md:w-[337px] md:h-[65px] transition-colors duration-200"
             style={{ borderWidth: 2, borderRadius: 24 }}
             onClick={() => {
               router.push("/");
