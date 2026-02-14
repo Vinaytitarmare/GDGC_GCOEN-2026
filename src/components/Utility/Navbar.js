@@ -9,6 +9,7 @@ import AccountMenu from "../MyAccount/AccountMenu";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hoverGDGC, setHoverGDGC] = useState(false);
+  const [hoverMenuItem, setHoverMenuItem] = useState(null);
   const { isLogin } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
@@ -82,25 +83,33 @@ const Navbar = () => {
             style={{ borderWidth: 2, borderRadius: 24 }}
           ></div>
 
-          {menuItems.map((item) => (
-            <button
-              key={item.name}
-              className={`flex items-center justify-center bg-white border-black text-black font-['Poppins'] font-normal text-[29px] leading-[44px] md:h-[65px] ${
-                item.width
-              } ${
-                pathname === item.path || pathname.startsWith(`${item.path}/`)
-                  ? "bg-blue1"
-                  : "hover:bg-gray1"
-              }`}
-              style={{ borderWidth: 2, borderRadius: 24 }}
-              onClick={() => {
-                router.push(item.path);
-                setMenuOpen(false);
-              }}
-            >
-              {item.name}
-            </button>
-          ))}
+          {menuItems.map((item) => {
+            const isActive = pathname === item.path || pathname.startsWith(`${item.path}/`);
+            const isHover = hoverMenuItem === item.name;
+            
+            let bgColor = "white";
+            if (isActive) {
+              bgColor = "#cce4ff"; // blue1
+            } else if (isHover) {
+              bgColor = "#ffe7a5";
+            }
+            
+            return (
+              <button
+                key={item.name}
+                className={`flex items-center justify-center border-black text-black font-['Poppins'] font-normal text-[29px] leading-[44px] md:h-[65px] ${item.width} transition-colors`}
+                style={{ borderWidth: 2, borderRadius: 24, backgroundColor: bgColor }}
+                onClick={() => {
+                  router.push(item.path);
+                  setMenuOpen(false);
+                }}
+                onMouseEnter={() => setHoverMenuItem(item.name)}
+                onMouseLeave={() => setHoverMenuItem(null)}
+              >
+                {item.name}
+              </button>
+            );
+          })}}
         </div>
       </div>
     </div>
