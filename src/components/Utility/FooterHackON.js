@@ -50,20 +50,6 @@ const FooterHackON = () => {
             ))}
           </div>
 
-          {/* Call-to-Action Section */}
-          <div className="text-white flex flex-col items-center md:items-end font-bold text-2xl sm:text-3xl md:text-4xl leading-snug gap-y-4 mt-8 md:mt-0">
-            <p>Excited? Why wait! </p>
-            <p>Let's host together</p>
-            <DefaultBtn
-              func={() => {
-                router.push("/ContactUs");
-              }}
-              name="Event with us"
-              HoverColor="hover:bg-gray3 text-black"
-              txtColor="text-black bg-white border-2 border-black"
-            />
-          </div>
-
           {/* Social Links Section for Mobile */}
           <div className="lg:hidden flex flex-row gap-x-3 justify-center mt-8">
             {socialLinks.map(({ icon, link, label }, index) => (

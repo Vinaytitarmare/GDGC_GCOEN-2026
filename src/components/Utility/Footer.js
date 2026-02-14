@@ -37,22 +37,8 @@ const Footer = () => {
   const router = useRouter();
 
   return (
-    <footer className="bg-footer_bg">
+    <footer className="bg-white" style={{ paddingTop: "600px" }}>
       <div className="container m-auto">
-        {/* Call-to-Action Section */}
-        <div className={`flex flex-col md:flex-row ${rethink_sans800} px-5 py-8 md:py-16`}>
-          <div className="text-white flex flex-col items-center md:items-end font-bold text-2xl sm:text-3xl md:text-4xl leading-snug gap-y-4 mt-8 md:mt-0">
-            <p>Excited? Why wait! </p>
-            <p>Let's host together</p>
-            <DefaultBtn
-              func={() => router.push("/ContactUs")}
-              name="Event with us"
-              HoverColor="hover:bg-gray3 text-black"
-              txtColor="text-black bg-white border-2 border-black"
-            />
-          </div>
-        </div>
-
         {/* Frame 124 - Bottom Box */}
         <div className="flex justify-center py-8 px-5">
           <div

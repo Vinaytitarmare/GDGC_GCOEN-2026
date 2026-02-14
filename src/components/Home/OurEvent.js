@@ -5,15 +5,6 @@ import { rethink_sans800 } from "@/Fonts/Rethink";
 const OurEvent = () => {
   return (
     <div className={`${rethink_sans800.className} aos-init`} data-aos="fade-up">
-      <Image
-        src="/OurEvents1.svg"
-        width={1899.975}
-        height={111.69}
-        alt="Element 1"
-        data-aos="fade-right"
-        className="w-full aos-init"
-      />
-
       <div className=" container m-auto flex flex-col  px-5 ">
         {/* <div className=" mx-5 md:mx-10 flex flex-col p-{64px} "> */}
         <p className="sm:text-xxl  text-l font-extrabold">Our Events</p>
