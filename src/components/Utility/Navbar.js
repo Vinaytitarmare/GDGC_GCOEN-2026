@@ -109,7 +109,7 @@ const Navbar = () => {
                 {item.name}
               </button>
             );
-          })}}
+          })}
         </div>
       </div>
     </div>
