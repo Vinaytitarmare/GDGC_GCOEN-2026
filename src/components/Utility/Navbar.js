@@ -9,7 +9,7 @@ import AccountMenu from "../MyAccount/AccountMenu";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [hoverGDGC, setHoverGDGC] = useState(false);
-  const [hoverMenuItem, setHoverMenuItem] = useState(null);
+  const [hoverItem, setHoverItem] = useState(null);
   const { isLogin } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
@@ -85,14 +85,11 @@ const Navbar = () => {
 
           {menuItems.map((item) => {
             const isActive = pathname === item.path || pathname.startsWith(`${item.path}/`);
-            const isHover = hoverMenuItem === item.name;
+            const isHovered = hoverItem === item.name;
             
             let bgColor = "white";
-            if (isActive) {
-              bgColor = "#cce4ff"; // blue1
-            } else if (isHover) {
-              bgColor = "#ffe7a5";
-            }
+            if (isActive) bgColor = "#cce4ff";
+            else if (isHovered) bgColor = "#ffe7a5";
             
             return (
               <button
@@ -103,8 +100,8 @@ const Navbar = () => {
                   router.push(item.path);
                   setMenuOpen(false);
                 }}
-                onMouseEnter={() => setHoverMenuItem(item.name)}
-                onMouseLeave={() => setHoverMenuItem(null)}
+                onMouseEnter={() => setHoverItem(item.name)}
+                onMouseLeave={() => setHoverItem(null)}
               >
                 {item.name}
               </button>
