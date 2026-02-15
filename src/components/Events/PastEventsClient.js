@@ -1,8 +1,8 @@
 "use client"; // Mark this as a Client Component
 
 // import React from "react";
-import React, { useRef } from "react";
-import PastEventCard from "./PastEventCard";
+import { useRef } from "react";
+import EventCard from "./EventCard";
 
 const PastEventsClient = ({ events }) => {
   const scrollRef = useRef(null);
@@ -40,20 +40,21 @@ const PastEventsClient = ({ events }) => {
       {/* Scrollable Container */}
       <div
       ref={scrollRef}
-        className=" mt-4 flex gap-5 overflow-x-auto w-full"
+        className=" mt-4 flex gap-5 overflow-x-auto w-full py-4 px-2"
         style={{
           scrollbarWidth: "none", // Hide scrollbar for Firefox
         }}
       >
         {events.map((event, index) => (
-          <PastEventCard
+          <EventCard
             key={index}
+            id={event?.$id}
             Title={event?.Title}
-            Topics={event?.Topics}
             Description={event?.Description}
+            FeaturedURL={event?.FeaturedURL}
             StartDate={event?.StartDate}
             location={event?.location}
-            Reports={event?.Reports}
+            type="past"
           />
         ))}
       </div>
