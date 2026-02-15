@@ -204,15 +204,16 @@ const LandingPage = () => {
       </div>
 
       {/* Mobile Version */}
-      <div className="flex md:hidden flex-col bg-white px-4 py-8 min-h-screen">
+      <div className="flex md:hidden flex-col bg-white px-4 py-8 min-h-screen relative">
         <div style={{ textAlign: "center", paddingTop: "20px", paddingBottom: "30px" }}>
           <img
             src="/gdgc.png"
             alt="GDGC Logo"
             style={{
-              width: "100px",
+              width: "110px",
               height: "auto",
-              margin: "0 auto",
+              margin: "0",
+              marginTop: "-20px",
             }}
           />
         </div>
@@ -220,11 +221,11 @@ const LandingPage = () => {
         <h1
           style={{
             fontFamily: "Poppins",
-            fontSize: "32px",
+            fontSize: "30px",
             fontWeight: 600,
             textAlign: "center",
             color: "#F9AB00",
-            WebkitTextStroke: "1px #000000",
+            WebkitTextStroke: "0.2px #000000",
             marginBottom: "15px",
             lineHeight: "1.3",
           }}
@@ -237,9 +238,10 @@ const LandingPage = () => {
             fontFamily: "Poppins",
             fontSize: "16px",
             fontWeight: 400,
-            textAlign: "center",
+            textAlign: "left",
             color: "#000000",
             marginBottom: "20px",
+            marginTop: "40px",
           }}
         >
           GOVERNMENT COLLEGE OF ENGINEERING NAGPUR
@@ -250,11 +252,12 @@ const LandingPage = () => {
             fontFamily: "Poppins",
             fontSize: "32px",
             fontWeight: 600,
-            textAlign: "center",
+            textAlign: "left",
             color: "#F9AB00",
-            WebkitTextStroke: "1px #000000",
-            marginBottom: "30px",
+            WebkitTextStroke: "0.2px #000000",
+            marginBottom: "47px",
             lineHeight: "1.3",
+            marginTop: "-98px",
           }}
         >
           On Campus
@@ -264,10 +267,14 @@ const LandingPage = () => {
           src="/main.png"
           alt="Main"
           style={{
-            width: "100%",
-            maxWidth: "400px",
-            height: "auto",
-            margin: "0 auto 30px",
+            position: "absolute",
+            width: "325px",
+            height: "153px",
+            left: "17px",
+            top: "283px",
+            background: "url(/Checker.png)",
+            border: "1px solid #000000",
+            borderRadius: "20px",
           }}
         />
 
@@ -278,20 +285,23 @@ const LandingPage = () => {
             padding: "20px",
             marginBottom: "30px",
             background: "transparent",
+            marginTop: "100px",
           }}
         >
           <div
             style={{
               fontFamily: "Poppins",
-              fontSize: "14px",
-              lineHeight: "1.6",
-              textAlign: "center",
+              fontSize: "10.5px",
+              lineHeight: "1.4",
+              textAlign: "left",
               color: "#000000",
+              marginTop: "67px",
+              marginLeft: "-10px",
             }}
           >
-            <span style={{ fontWeight: 600 }}>At Google Developer Group on Campus, GCOEN,</span>
+            <span style={{ fontWeight: 530 }}>At Google Developer Group on Campus, GCOEN,</span>
             <br />
-            <span style={{ fontWeight: 400 }}>we code, design, and occasionally debug our lives. We're a student community that learns, builds, and breaks things (on purpose!) while exploring Google technologies. Workshops, hackathons, and great vibes because who said tech can't be fun?</span>
+            <span style={{ fontWeight: 430 }}>we code, design, and occasionally debug our lives. We're a student community that learns, builds, and breaks things (on purpose!) while exploring Google technologies. Workshops, hackathons, and great vibes because who said tech can't be fun?</span>
           </div>
         </div>
       </div>

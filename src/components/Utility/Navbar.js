@@ -27,19 +27,61 @@ const Navbar = () => {
   return (
     <div className="relative w-full z-50">
       {/* Mobile Menu Header */}
-      <div className="top-0 md:hidden relative w-full right-0 flex justify-between items-center p-3 bg-blue">
+      <div className="top-0 md:hidden relative w-full right-0 flex justify-between items-center p-3 bg-white">
         <div className="flex items-center gap-3">
-          <button
-            className="text-white text-xl focus:outline-none"
-            onClick={() => setMenuOpen(!menuOpen)}
-          >
-            ☰
-          </button>
-          <p className="text-white font-bold text-sm sm:text-base">
-            {pathname == "/" ? "HOME" : pathname.split("/")[1].toUpperCase()}
-          </p>
+          {pathname == "/" ? (
+            <Image
+              src="/homemobile.png"
+              alt="Home"
+              width={197}
+              height={47}
+            />
+          ) : pathname.includes("/Events") ? (
+            <Image
+              src="/eventmobile.png"
+              alt="Events"
+              width={117}
+              height={57}
+            />
+          ) : pathname.includes("/Blogs") ? (
+            <Image
+              src="/blogsmobile.png"
+              alt="Blogs"
+              width={117}
+              height={57}
+            />
+          ) : pathname.includes("/Teams") ? (
+            <Image
+              src="/teamsmobile.png"
+              alt="Teams"
+              width={117}
+              height={57}
+            />
+          ) : pathname.includes("/ContactUs") ? (
+            <Image
+              src="/contactmobile.png"
+              alt="Contact"
+              width={187}
+              height={57}
+            />
+          ) : (
+            <p className="text-black text-sm sm:text-base">
+              {pathname.split("/")[1].toUpperCase()}
+            </p>
+          )}
         </div>
         <div className="text-lg flex gap-2 items-center ">
+          <button
+            className="text-black text-xl focus:outline-none"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
+            <Image
+              src="/mobilenav.png"
+              alt="Menu"
+              width={28}
+              height={28}
+            />
+          </button>
           {isLogin && (
             <AccountMenu btnStyle=" flex items-center justify-center text-black border-2 font-semibold border-black p-2 w-8 h-8  bg-white rounded-full focus:outline-none" />
           )}
