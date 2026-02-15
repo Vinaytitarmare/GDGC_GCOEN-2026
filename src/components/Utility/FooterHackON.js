@@ -94,7 +94,10 @@ hover:text-black"
 
 
         {/* GDG Logo Section - Shifted Left but Large */}
-        <div className="w-full flex items-center mt-6">
+
+      </div>
+
+              <div className="w-full flex items-center mt-10">
   {/* Left Line */}
   <div className="flex-[0.15] h-[1.5px] bg-white/80"></div>
 
@@ -112,7 +115,6 @@ hover:text-black"
   {/* Right Line */}
   <div className="flex-1 h-[1.5px] bg-white/80"></div>
 </div>
-      </div>
     </footer>
   );
 };

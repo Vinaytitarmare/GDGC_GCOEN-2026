@@ -27,7 +27,7 @@ const Hackon = () => {
       <HackOnPrizes />
       <HackOnPartners />
       <FAQ />
-      <Image src="/HackOnStrip.svg" width={20} height={30} className="w-full" />
+      {/* <Image src="/HackOnStrip.svg" width={20} height={30} className="w-full" /> */}
       <FooterHackON />{" "}
     </div>
   );
