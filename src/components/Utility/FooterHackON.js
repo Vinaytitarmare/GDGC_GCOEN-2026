@@ -8,15 +8,56 @@ const FooterHackON = () => {
       <div className="container mx-auto flex flex-col items-center gap-8 px-4">
 
         {/* Register Box from Figma */}
-        <Link href="https://your-register-link.com" target="_blank">
-          <Image
-            src="/register-box.svg"
-            alt="Register Now"
-            width={800}
-            height={300}
-            className="w-full max-w-xl cursor-pointer hover:scale-[1.02] transition-transform"
-          />
-        </Link>
+        {/* Register Box from Figma (Box + Hoverable Button) */}
+<Link
+  href="https://your-register-link.com"
+  target="_blank"
+  className="relative w-full max-w-xl"
+>
+  {/* Outer Box */}
+  <Image
+    src="/register-box.svg"
+    alt="Register Box"
+    width={800}
+    height={300}
+    className="w-full h-auto"
+  />
+
+  {/* Button Wrapper (handles hover) */}
+  <div
+    className="
+      absolute 
+      bottom-[14%] 
+      left-1/2 
+      -translate-x-1/2 
+      w-[160px] sm:w-[190px] md:w-[220px]
+      cursor-pointer
+      group
+    "
+  >
+    {/* Normal Button */}
+    <Image
+      src="/register-btn.svg"
+      alt="Register Now"
+      width={240}
+      height={80}
+      className="w-full transition-all duration-200 group-hover:hidden"
+    />
+
+    {/* Hover Button */}
+    <Image
+      src="/register-btn-hover.svg"
+      alt="Register Now Hover"
+      width={240}
+      height={80}
+      className="w-full hidden transition-all duration-200 group-hover:block"
+    />
+  </div>
+</Link>
+
+
+
+
 
         {/* Social Media Links */}
         <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
@@ -25,9 +66,27 @@ const FooterHackON = () => {
               key={index}
               href={item.link}
               target="_blank"
-              className="flex items-center gap-2 rounded-full border border-white/40 px-4 py-2 text-white text-xs sm:text-sm hover:bg-white hover:text-black transition"
+              className=" group flex items-center gap-2 rounded-full 
+border border-white/40 
+px-4 py-2 
+text-white text-xs sm:text-sm 
+transition-all duration-200
+
+hover:bg-yellow-100 
+hover:border-yellow-500 
+hover:text-black"
             >
-              <Image src={item.icon} alt={item.label} width={16} height={16} />
+              <Image
+  src={item.icon}
+  alt={item.label}
+  width={16}
+  height={16}
+  className="
+    transition 
+    group-hover:brightness-0
+  "
+/>
+
               <span className="underline">{item.label}</span>
             </Link>
           ))}
@@ -36,23 +95,23 @@ const FooterHackON = () => {
 
         {/* GDG Logo Section - Shifted Left but Large */}
         <div className="w-full flex items-center mt-6">
-          {/* Left Line - Short segment to push logo slightly right of the edge */}
-          <div className="flex-[0.05] h-[1.5px] bg-white/80"></div>
-          
-          {/* Large Logo - Matches the scale of your first version */}
-          <div className="px-6 shrink-0">
-            <Image
-              src="/gdc-on-campus-logo.svg" 
-              alt="Google Developer Group On Campus GCOEN"
-              width={700} // Increased width
-              height={120}
-              className="w-full max-w-md md:max-w-lg lg:max-w-xl h-auto object-contain"
-            />
-          </div>
+  {/* Left Line */}
+  <div className="flex-[0.15] h-[1.5px] bg-white/80"></div>
 
-          {/* Right Line - Fills the rest of the horizontal space */}
-          <div className="flex-grow h-[1.5px] bg-white/80"></div>
-        </div>
+  {/* Logo */}
+  <div className="px-4 md:px-6 shrink-0">
+    <Image
+      src="/gdc-on-campus-logo.svg"
+      alt="Google Developer Group On Campus GCOEN"
+      width={700}
+      height={120}
+      className="w-[220px] sm:w-[280px] md:w-[360px] lg:w-[420px] h-auto object-contain"
+    />
+  </div>
+
+  {/* Right Line */}
+  <div className="flex-1 h-[1.5px] bg-white/80"></div>
+</div>
       </div>
     </footer>
   );
