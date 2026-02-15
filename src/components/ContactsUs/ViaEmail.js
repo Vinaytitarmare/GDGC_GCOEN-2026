@@ -126,7 +126,7 @@ const ViaEmail = () => {
           type="text"
           value={formData.fullName}
           onChange={handleChange}
-          className="w-full outline-none border font-normal border-black rounded-lg py-3 px-2"
+          className="w-full outline-none border-2 font-normal border-black rounded-lg py-3 px-2"
           placeholder="Full Name"
         />
         <input
@@ -134,7 +134,7 @@ const ViaEmail = () => {
           type="text"
           value={formData.profession}
           onChange={handleChange}
-          className="w-full outline-none border font-normal border-black rounded-lg py-3 px-2"
+          className="w-full outline-none border-2 font-normal border-black rounded-lg py-3 px-2"
           placeholder="Profession"
         />
         <input
@@ -142,7 +142,7 @@ const ViaEmail = () => {
           type="text"
           value={formData.company}
           onChange={handleChange}
-          className="w-full outline-none border font-normal border-black rounded-lg py-3 px-2"
+          className="w-full outline-none border-2 font-normal border-black rounded-lg py-3 px-2"
           placeholder="Company / Organisation"
         />
         <div className="flex md:flex-row flex-col gap-5">
@@ -151,7 +151,7 @@ const ViaEmail = () => {
             type="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full outline-none border font-normal border-black rounded-lg py-3 px-2"
+            className="w-full outline-none border-2 font-normal border-black rounded-lg py-3 px-2"
             placeholder="Email Address"
           />
           <input
@@ -159,7 +159,7 @@ const ViaEmail = () => {
             type="text"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full outline-none border font-normal border-black rounded-lg py-3 px-2"
+            className="w-full outline-none border-2 font-normal border-black rounded-lg py-3 px-2"
             placeholder="Phone Number"
           />
         </div>
@@ -168,7 +168,7 @@ const ViaEmail = () => {
           type="text"
           value={formData.message}
           onChange={handleChange}
-          className="w-full outline-none border font-normal border-black rounded-lg py-3 px-2"
+          className="w-full outline-none border-2 font-normal border-black rounded-lg py-3 px-2"
           placeholder="Description"
         />
         <div className="flex gap-5 items-center">

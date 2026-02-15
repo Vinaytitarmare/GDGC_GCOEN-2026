@@ -84,10 +84,10 @@ const SocialButton = ({ icon, link, label }) => {
     <Link
       href={link}
       target="_blank"
-      className={`group text-sm md:text-lg text-black ${rethink_sans400.className} flex items-center justify-center border border-black rounded-full px-3 py-2 md:px-4 md:py-2.5 gap-1.5 md:gap-2 bg-white hover:border-yellow-500 hover:text-yellow-500 transition-colors min-w-0`}
+      className={`group text-sm md:text-lg text-black ${rethink_sans400.className} flex items-center justify-center border border-black rounded-full px-3 py-2 md:px-4 md:py-2.5 gap-1.5 md:gap-2 bg-white hover:border-yellow-500 hover:text-yellow-500 transition-colors whitespace-nowrap`}
     >
       <i className={`uil ${icon} text-base md:text-xl text-black group-hover:text-yellow-500 transition-colors flex-shrink-0 ${isLightIcon ? "font-light" : ""}`} />
-      <span className="truncate">{label}</span>
+      <span>{label}</span>
     </Link>
   );
 };

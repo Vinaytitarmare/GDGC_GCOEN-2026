@@ -10,7 +10,7 @@ export const metadata = {
 };
 
 const rethink_sans = Rethink_Sans({
-  weight: "800",
+  weight: "400",
   subsets: ["latin", "latin-ext"],
 });
 
@@ -18,7 +18,7 @@ const ContactUs = () => {
   return (
     <div className="relative mt-14 md:mt-0 py-10">
       <h2
-        className={`text-3xl md:text-[64px] mb-1 ${rethink_sans.className}`}
+        className={`text-3xl md:text-[64px] mb-1 font-normal ${rethink_sans.className}`}
       >
         Contact us
       </h2>
