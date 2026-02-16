@@ -1,6 +1,6 @@
 "use client";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 
 const SocialLink = ({ href, imageAlt, imageSrc, whiteImageSrc }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -50,101 +50,105 @@ const LogoImage = () => {
       suppressHydrationWarning
       style={{
         position: "absolute",
-        right: "20px",
-        width: "475px",
-        height: "100px",
+        right: "30px", // Adjusted slightly for better spacing
+        width: "auto",
+        height: "80px", // Fixed height to prevent distortion
+        maxWidth: "400px",
         cursor: "pointer",
         transition: "all 0.3s ease",
+        objectFit: "contain"
       }}
     />
   );
 };
 
 const Footer = () => {
-  const router = useRouter();
-
   return (
     <>
-      {/* Desktop Footer */}
-      <footer className="hidden md:block bg-white" style={{ paddingTop: "600px" }}>
-        <div className="container m-auto">
-          {/* Frame 124 - Bottom Box */}
-          <div className="flex justify-center py-8 px-5">
+      {/* ------------------------------------------------ */}
+      {/* DESKTOP FOOTER (Fixed)                           */}
+      {/* ------------------------------------------------ */}
+      <footer className="hidden md:flex justify-center w-full py-10 bg-transparent relative z-30">
+        <div className="container m-auto px-4 flex justify-center">
+          
+          {/* The White Pill Box */}
+          <div
+            className="border-2 border-black rounded-[62px] bg-white relative flex items-center justify-center shadow-lg"
+            style={{
+              width: "1250px",
+              height: "180px",
+              maxWidth: "100%",
+            }}
+          >
+            {/* Left Section - Social Icons */}
             <div
-              className="border-2 border-black rounded-[62px] bg-white relative flex justify-center items-center"
               style={{
-                width: "1250px",
-                height: "180px",
-                maxWidth: "95vw",
+                position: "absolute",
+                left: "40px",
                 display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
+                flexDirection: "column",
+                gap: "12px",
               }}
             >
-              {/* Left Section - Social Icons */}
-              <div
-                style={{
-                  position: "absolute",
-                  left: "20px",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "8px",
-                }}
-              >
-                {/* Top Row - Instagram, WhatsApp, LinkedIn */}
-                <div style={{ display: "flex", gap: "8px" }}>
-                  <SocialLink
-                    href="https://www.instagram.com/gdgcgcoen/"
-                    imageAlt="Instagram"
-                    imageSrc="/insta.png"
-                    whiteImageSrc="/whiteinsta.png"
-                  />
-                  <SocialLink
-                    href="https://chat.whatsapp.com/Ge1u3fw4eOzEOIiUG6z6aJ"
-                    imageAlt="WhatsApp"
-                    imageSrc="/whatsapp.png"
-                    whiteImageSrc="/whitewhatsapp.png"
-                  />
-                  <SocialLink
-                    href="https://www.linkedin.com/company/gdgoncampus-gcoen/"
-                    imageAlt="LinkedIn"
-                    imageSrc="/linkedin.png"
-                    whiteImageSrc="/whitelinkedin.png"
-                  />
-                </div>
-                {/* Bottom Row - X, YouTube */}
-                <div style={{ display: "flex", gap: "8px" }}>
-                  <SocialLink
-                    href="https://x.com/GDGCGcoen"
-                    imageAlt="X"
-                    imageSrc="/x.png"
-                    whiteImageSrc="/whiteX.png"
-                  />
-                  <SocialLink
-                    href="https://www.youtube.com/c/gdscgcoen3822"
-                    imageAlt="YouTube"
-                    imageSrc="/youtube.png"
-                    whiteImageSrc="/whiteyoutube.png"
-                  />
-                </div>
+              {/* Top Row */}
+              <div className="flex gap-3">
+                <SocialLink
+                  href="https://www.instagram.com/gdgcgcoen/"
+                  imageAlt="Instagram"
+                  imageSrc="/insta.png"
+                  whiteImageSrc="/whiteinsta.png"
+                />
+                <SocialLink
+                  href="https://chat.whatsapp.com/Ge1u3fw4eOzEOIiUG6z6aJ"
+                  imageAlt="WhatsApp"
+                  imageSrc="/whatsapp.png"
+                  whiteImageSrc="/whitewhatsapp.png"
+                />
+                <SocialLink
+                  href="https://www.linkedin.com/company/gdgoncampus-gcoen/"
+                  imageAlt="LinkedIn"
+                  imageSrc="/linkedin.png"
+                  whiteImageSrc="/whitelinkedin.png"
+                />
               </div>
-
-              <img
-                src="/gdgfooter.png"
-                alt="Vector"
-                style={{
-                  width: "75px",
-                  height: "40px",
-                }}
-              />
-              <LogoImage />
+              {/* Bottom Row */}
+              <div className="flex gap-3">
+                <SocialLink
+                  href="https://x.com/GDGCGcoen"
+                  imageAlt="X"
+                  imageSrc="/x.png"
+                  whiteImageSrc="/whiteX.png"
+                />
+                <SocialLink
+                  href="https://www.youtube.com/c/gdscgcoen3822"
+                  imageAlt="YouTube"
+                  imageSrc="/youtube.png"
+                  whiteImageSrc="/whiteyoutube.png"
+                />
+              </div>
             </div>
+
+            {/* Center Graphic */}
+            <img
+              src="/gdgfooter.png"
+              alt="Vector"
+              className="object-contain"
+              style={{
+                width: "80px",
+                height: "auto",
+              }}
+            />
+
+            {/* Right Section - Logo */}
+            <LogoImage />
           </div>
         </div>
       </footer>
 
-      {/* Mobile Footer */}
-      <footer className="block md:hidden bg-white px-4 py-8">
+      {/* ------------------------------------------------ */}
+      {/* MOBILE FOOTER (Unchanged)                        */}
+      {/* ------------------------------------------------ */}
+      <footer className="block md:hidden bg-transparent px-4 py-8 relative z-30">
         <div style={{
           border: "2px solid #000000",
           borderRadius: "20px",
@@ -153,6 +157,7 @@ const Footer = () => {
           flexDirection: "column",
           alignItems: "center",
           gap: "20px",
+          backgroundColor: "white" // Ensure white background on mobile too
         }}>
           {/* Social Icons */}
           <div style={{ display: "flex", flexDirection: "column", gap: "12px", alignItems: "center" }}>
