@@ -2,11 +2,11 @@
 
 import { useAuth } from "@/context/AuthContext";
 import { poppins400 } from "@/Fonts/Poppins";
+import { Calendar, Home, Mail, Rss, Users } from "lucide-react";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import React, { useState } from "react";
+import { useState } from "react";
 import AccountMenu from "../MyAccount/AccountMenu";
-import { Home, Calendar, Rss, Users, Mail, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,11 +19,11 @@ const Navbar = () => {
 
   // List of menu items and their routes
   const menuItems = [
-    { name: "Home", path: "/", width: "md:w-[197px]", imgURl: "/homemobile.png", icon: Home },
-    { name: "Events", path: "/Events", width: "md:w-[197px]", imgURl: "/eventmobile.png", icon: Calendar },
-    { name: "Blogs", path: "/Blogs", width: "md:w-[197px]", imgURl: "/blogsmobile.png", icon: Rss },
-    { name: "Teams", path: "/Teams", width: "md:w-[199px]", imgURl: "/teamsmobile.png", icon: Users },
-    { name: "Contact Us", path: "/ContactUs", width: "md:w-[245px]",  imgURl: "/contactmobile.png", icon: Mail },
+    { name: "Home", path: "/", width: "md:w-[100px] lg:w-[140px] xl:w-[160px] 2xl:w-[197px]", imgURl: "/homemobile.png", icon: Home },
+    { name: "Events", path: "/Events", width: "md:w-[100px] lg:w-[140px] xl:w-[160px] 2xl:w-[197px]", imgURl: "/eventmobile.png", icon: Calendar },
+    { name: "Blogs", path: "/Blogs", width: "md:w-[100px] lg:w-[140px] xl:w-[160px] 2xl:w-[197px]", imgURl: "/blogsmobile.png", icon: Rss },
+    { name: "Teams", path: "/Teams", width: "md:w-[100px] lg:w-[140px] xl:w-[160px] 2xl:w-[199px]", imgURl: "/teamsmobile.png", icon: Users },
+    { name: "Contact Us", path: "/ContactUs", width: "md:w-[130px] lg:w-[170px] xl:w-[200px] 2xl:w-[245px]",  imgURl: "/contactmobile.png", icon: Mail },
   ];
 
   const handleMenuOpen = () => {
@@ -150,15 +150,15 @@ const Navbar = () => {
 
       {/* Navbar Container */}
       <div
-        className={`hidden md:flex z-[9999px] md:relative md:mx-auto md:mt-[44px] md:bg-transparent md:shadow-none md:justify-center md:items-center md:w-fit md:h-[65px]`}
+        className={`hidden md:flex z-[9999px] md:relative md:mx-auto md:mt-[44px] md:bg-transparent md:shadow-none md:justify-center md:items-center md:w-fit md:h-[50px] xl:h-[55px] 2xl:h-[65px]`}
       >
         <div
-          className="flex flex-col bg-blue md:bg-black md:flex-row md:items-center md:justify-center gap-2 sm:gap-3 md:gap-0 overflow-visible border-black w-full md:h-[65px] md:px-0"
+          className="flex flex-col bg-blue md:bg-black md:flex-row md:items-center md:justify-center gap-2 sm:gap-3 md:gap-0 overflow-visible border-black w-full md:h-[50px] xl:h-[55px] 2xl:h-[65px] md:px-0"
           style={{ borderWidth: 0, borderRadius: 24 }}
         >
           
            <button
-            className="flex items-center border-black px-2 py-2 sm:px-[15px] sm:py-[14px] md:w-[337px] md:h-[65px] transition-colors text-nowrap w-full animate-none"
+            className="flex items-center border-black px-2 py-2 sm:px-[10px] sm:py-[10px] md:w-[170px] md:h-[50px] lg:w-[240px] xl:w-[280px] xl:h-[55px] 2xl:w-[337px] 2xl:h-[65px] transition-colors text-nowrap w-full animate-none"
             style={{ borderWidth: 2, borderRadius: 24, backgroundColor: hoverGDGC ? "#f8d8d8" : "white", marginRight: -1 }}
             onClick={() => {
               router.push("/");
@@ -167,8 +167,8 @@ const Navbar = () => {
             onMouseEnter={() => setHoverGDGC(true)}
             onMouseLeave={() => setHoverGDGC(false)}
           >
-            <Image src="/vector26.png" alt="GDGC triangles" width={50} height={28} className="w-[50px] h-[28px] sm:w-[80px] sm:h-[43px]" />
-            <span className={`text-black text-xs sm:text-2xl md:text-[29px] leading-tight sm:leading-[44px] ml-1 sm:ml-[29px] whitespace-nowrap ${poppins400.className}`}>
+            <Image src="/vector26.png" alt="GDGC triangles" width={50} height={28} className="w-[30px] h-auto md:w-[35px] lg:w-[40px] xl:w-[50px] 2xl:w-[80px] h-auto" />
+            <span className={`text-black text-xs sm:text-lg md:text-xs lg:text-lg xl:text-2xl 2xl:text-[29px] leading-tight sm:leading-[30px] xl:leading-[40px] 2xl:leading-[44px] ml-1 sm:ml-[15px] xl:ml-[20px] 2xl:ml-[29px] whitespace-nowrap ${poppins400.className}`}>
               GDGC GCOEN
             </span>
            </button>
@@ -182,7 +182,7 @@ const Navbar = () => {
             return (
               <button
                 key={item.name}
-                className={`flex items-center justify-center border-black text-black text-xs sm:text-lg md:text-[29px] leading-tight md:leading-[44px] md:h-[65px] px-2 sm:px-4 py-2 sm:py-2 ${item.width} transition-colors w-full ${poppins400.className}`}
+                className={`flex items-center justify-center border-black text-black text-xs sm:text-sm md:text-xs lg:text-lg xl:text-2xl 2xl:text-[29px] leading-tight md:leading-[30px] xl:leading-[40px] 2xl:leading-[44px] md:h-[50px] xl:h-[55px] 2xl:h-[65px] px-2 sm:px-2 py-2 sm:py-2 ${item.width} transition-colors w-full ${poppins400.className}`}
                 style={{ borderWidth: 2, borderRadius: 24, backgroundColor: bgColor, marginLeft: -1, marginRight: -1 }}
                 onClick={() => {
                   router.push(item.path);

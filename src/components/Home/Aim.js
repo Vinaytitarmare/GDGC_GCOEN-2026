@@ -1,5 +1,3 @@
-import React from "react";
-import { rethink_sans400, rethink_sans600 } from "@/Fonts/Rethink";
 
 const Aim = () => {
   return (
@@ -17,25 +15,15 @@ const Aim = () => {
         }}
       >
         <div
-          className="absolute inset-0 z-0 bg-cover bg-center"
           style={{
             backgroundImage: "url('/CollegeBgMob.svg')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             transition: "opacity 0.5s ease-in-out",
-            opacity: 100,
-            animation: "fadeIn 1s forwards",
-            animationKeyframes: `
-        @keyframes fadeIn {
-          0% {
-            opacity: 0;
-          }
-          100% {
-            opacity: 1;
-          }
-        }
-      `,
+            opacity: 1,
+            // animation: "fadeIn 1s forwards", // Removed inline keyframes which are invalid in style object
           }}
+          className="absolute inset-0 z-0 bg-cover bg-center animate-in fade-in duration-1000"
         ></div>
       </div>
     </div>

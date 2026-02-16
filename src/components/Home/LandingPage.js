@@ -1,9 +1,7 @@
 "use client";
-import React from "react";
 import Image from "next/image";
 // Ensure these paths match your project structure exactly
-import GDGLogo from "@/logo1.png"; 
-import PersonImage from "@/Person.png"; 
+import PersonImage from "@/Person.png";
 
 const LandingPage = () => {
   return (
@@ -14,7 +12,7 @@ const LandingPage = () => {
       <div className="container mx-auto px-5 pt-32 pb-10 flex flex-col items-center relative">
         
         {/* 1. LOGO */}
-        <div className="mb-2 relative w-[120px] h-[80px] md:w-[195px] md:h-[105px]">
+        {/* <div className="mb-2 relative w-[120px] h-[80px] md:w-[195px] md:h-[105px]">
            <Image 
              src={GDGLogo} 
              alt="GDG Logo" 
@@ -22,24 +20,22 @@ const LandingPage = () => {
              className="object-contain"
              priority
            />
-        </div>
+        </div> */}
 
         {/* 2. MAIN HEADING */}
-        <h1 className="text-center font-['Poppins'] font-semibold text-4xl md:text-[89px] leading-tight text-[#F9AB00] drop-shadow-sm mb-4"
-            style={{ WebkitTextStroke: "1px #000000" }}>
-          Google Developer Group
-        </h1>
+        
 
-        {/* 3. SUB HEADING (On Campus) */}
-        <h2 className="text-center font-['Poppins'] font-semibold text-3xl md:text-[89px] leading-tight text-[#F9AB00] mb-6"
-            style={{ WebkitTextStroke: "1px #000000" }}>
-          On Campus
-        </h2>
-
-        {/* 4. COLLEGE NAME */}
-        <p className="text-center font-['Poppins'] font-normal text-lg md:text-[40px] leading-normal text-black max-w-4xl mb-12">
-          GOVERNMENT COLLEGE OF ENGINEERING NAGPUR
-        </p>
+        {/* 4. COLLEGE NAME IMAGE */}
+        <div className="relative w-[90%] md:w-[60%] lg:w-[50%] h-auto mt-[-110px] md:mt-[-150px] mb-12 flex justify-center">
+            <Image
+                src="/svg/hero.png"
+                alt="Government College of Engineering Nagpur"
+                width={800}
+                height={100}
+                className="w-full h-auto object-contain"
+                priority
+            />
+        </div>
 
         {/* 5. PERSON IMAGE (Replaces the old box and main.png) */}
         {/* This div dictates the height of this section naturally */}
@@ -59,12 +55,12 @@ const LandingPage = () => {
         <img
           src="/polygon4.png"
           alt=""
-          className="absolute top-1/2 left-4 md:left-20 w-10 md:w-[60px] h-auto -z-10 opacity-50 md:opacity-100"
+          className="absolute top-1/2 left-4 md:left-2 lg:left-10 w-10 md:w-[40px] lg:w-[50px] h-auto -z-10 opacity-50 md:opacity-100"
         />
         <img
           src="/polygon1.png"
           alt=""
-          className="absolute top-1/4 right-4 md:right-20 w-20 md:w-[134px] h-auto -z-10 opacity-50 md:opacity-100"
+          className="absolute top-1/4 right-4 md:right-2 lg:right-10 w-20 md:w-[80px] lg:w-[100px] h-auto -z-10 opacity-50 md:opacity-100"
         />
 
       </div>
