@@ -12,6 +12,15 @@ function generatedSignature(razorpayOrderId, razorpayPaymentId) {
 }
 
 export async function POST(request) {
+  // Validate required environment variable
+  if (!process.env.RAZORPAY_KEY_SECRET) {
+    console.error("Missing Razorpay credentials. Required: RAZORPAY_KEY_SECRET");
+    return NextResponse.json(
+      { message: "payment verification service is not configured properly", isOk: false },
+      { status: 500 }
+    );
+  }
+
   const { orderId, razorpayPaymentId, razorpaySignature } =
     await request.json();
 
