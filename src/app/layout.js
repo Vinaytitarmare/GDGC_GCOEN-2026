@@ -1,11 +1,10 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import RenderAllModal from "@/components/Modal/RenderedAllModal";
+import { AOSInit } from "@/components/Utility/aos";
+import Footer from "@/components/Utility/Footer";
 import Navbar from "@/components/Utility/Navbar";
 import { AuthProvider } from "@/context/AuthContext";
 import { Toaster } from "react-hot-toast";
-import Footer from "@/components/Utility/Footer";
-import RenderAllModal from "@/components/Modal/RenderedAllModal";
-import { AOSInit } from "@/components/Utility/aos";
+import "./globals.css";
 
 export default function RootLayout({ children }) {
   return (

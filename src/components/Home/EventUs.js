@@ -1,19 +1,8 @@
-import React from "react";
-import Image from "next/image";
-import { rethink_sans800 } from "@/Fonts/Rethink";
-import Link from "next/link";
-import GDGLogo from "@/logo1.png";
-import PersonImage from "@/Person.png";
 import ActionBtn from "@/components/Utility/ActionBtn";
+import { rethink_sans800 } from "@/Fonts/Rethink";
 
-export const metadata = {
-  title: 'Home',
-  description: 'This is the official website of GDGC GCOEN',
-  image: "/GDGCPoster.png",
-  keywords: 'gdgc, GDGC, gcoen, GCOEN, google, developer, group, club, college, gcoen, nagpur, Nagpur',
-}
 
-const HomePage = () => {
+const EventUs = () => {
   const imageHoverStyles = "transition-all duration-300 ease-out hover:-translate-y-1 hover:-translate-x-1 hover:border-2 hover:border-[#ffd427] hover:shadow-[4px_4px_0px_0px_#ffd427]";
 
   return (
@@ -122,4 +111,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default EventUs;

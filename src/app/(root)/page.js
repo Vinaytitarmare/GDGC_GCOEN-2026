@@ -1,7 +1,8 @@
 import React from "react";
 import LandingPage from "@/components/Home/LandingPage";
 import Aim from "@/components/Home/Aim";
-import Footer from "@/components/Utility/Footer";
+
+import EventUs from "@/components/Home/EventUs";
 
 export const metadata = {
   title: 'Home',
@@ -14,7 +15,8 @@ const HomePage = () => {
   return (
     <div>
       <LandingPage />
-      <Aim />
+      {/* <Aim /> */}
+      <EventUs/>
     </div>
   );
 };

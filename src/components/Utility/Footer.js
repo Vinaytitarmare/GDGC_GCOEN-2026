@@ -1,6 +1,4 @@
 "use client";
-import DefaultBtn from "./DefaultBtn";
-import { rethink_sans800 } from "@/Fonts/Rethink";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
