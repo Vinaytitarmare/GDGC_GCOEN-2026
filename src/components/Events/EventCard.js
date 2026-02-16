@@ -24,7 +24,6 @@ const EventCard = ({
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-      URL.revokeObjectURL(Reports);
     }
   };
 
@@ -32,18 +31,17 @@ const EventCard = ({
     <div 
       data-aos="fade-up"
       className="w-[300px] md:w-[450px] min-w-[300px] h-[480px] md:h-[580px] flex-shrink-0"
+      onClick={handleClick}
     >
-      <div onClick={handleClick}>
-        <UniversalCard
-          imageSrc={FeaturedURL}
-          title={Title}
-          date={StartDate}
-          location={location}
-          link={type === "past" && Reports ? "#" : `/Events/${id}`}
-          label={label}
-          type={type}
-        />
-      </div>
+      <UniversalCard
+        imageSrc={FeaturedURL}
+        title={Title}
+        date={StartDate}
+        location={location}
+        link={type === "past" && Reports ? "#" : `/Events/${id}`}
+        label={label}
+        type={type}
+      />
     </div>
   );
 };
