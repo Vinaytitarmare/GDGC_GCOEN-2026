@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
 
 function generatedSignature(razorpayOrderId, razorpayPaymentId) {
-  const keySecret = process.env.RAZORPAY_SECRET_ID;
+  const keySecret = process.env.RAZORPAY_KEY_SECRET;
 
   const sig = crypto
     .createHmac("sha256", keySecret)

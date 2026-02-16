@@ -1,10 +1,7 @@
-import { rethink_sans600 } from "@/Fonts/Rethink";
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 const HackOnInfo = () => {
+  return null;
 //   return (
 //     <div className="flex flex-col md:flex-row p-5 justify-center  relative gap-2 md:gap-5 items-center ">
 //       <Image

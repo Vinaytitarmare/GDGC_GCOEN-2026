@@ -63,6 +63,7 @@ const BlogPage = async () => {
               imageSrc={blog.FeaturedURL}
               link={`/Blogs/${blog.$id}`}
               label="Read more"
+              type="blog"
             />
           ))}
         </div>

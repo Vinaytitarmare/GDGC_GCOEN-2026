@@ -54,8 +54,8 @@ const HackOnPrizes = () => {
         
         {/* 2nd Prize */}
         <PrizeCard
-          trophy="/prizes/trophy-2nd.png"
-          bg="/prizes/prize-bg-silver.png"
+          trophy="/Prizes/trophy-2nd.png"
+          bg="/Prizes/prize-bg-silver.png"
           title="2nd Prize"
           amount="₹5,000"
           height="clamp(200px, 50vw, 420px)"
@@ -66,8 +66,8 @@ const HackOnPrizes = () => {
 
         {/* 1st Prize */}
         <PrizeCard
-          trophy="/prizes/trophy-1st.png"
-          bg="/prizes/prize-bg-gold.png"
+          trophy="/Prizes/trophy-1st.png"
+          bg="/Prizes/prize-bg-gold.png"
           title="1st Prize"
           amount="₹10,000"
           height="clamp(240px, 60vw, 480px)"
@@ -78,8 +78,8 @@ const HackOnPrizes = () => {
 
         {/* 3rd Prize */}
         <PrizeCard
-          trophy="/prizes/trophy-3rd.png"
-          bg="/prizes/prize-bg-bronze.png"
+          trophy="/Prizes/trophy-3rd.png"
+          bg="/Prizes/prize-bg-bronze.png"
           title="3rd Prize"
           amount="₹3,000"
           height="clamp(180px, 45vw, 360px)"

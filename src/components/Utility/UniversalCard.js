@@ -6,11 +6,14 @@ const UniversalCard = ({
   imageSrc, 
   title, 
   date, 
-  location = "GCOEN",
+  location,
   link = "#", 
   label = "Read more",
   type = "upcoming" // "upcoming" | "past" | "blog"
 }) => {
+  // Only show location for event types (upcoming/past), not for blogs
+  const showLocation = location && (type === "upcoming" || type === "past");
+  
   return (
     <Link href={link} className="block group h-full">
       {/* CONTAINER: Holds the stack */}
@@ -28,7 +31,7 @@ const UniversalCard = ({
              {imageSrc ? (
                <Image 
                  src={imageSrc} 
-                 alt={title} 
+                 alt={title || "Card image"} 
                  fill 
                  className="object-cover"
                />
@@ -41,11 +44,13 @@ const UniversalCard = ({
           {/* B. CONTENT SECTION (Bottom Half) */}
           <div className="p-5 flex flex-col flex-grow justify-between gap-4">
             
-            {/* Location (Row 1) */}
-            <div className="flex items-center gap-2">
-                <i className="uil uil-location-point text-base md:text-xl"></i>
-                <span className={`text-base md:text-lg font-bold ${rethink_sans800.className}`}>{location}</span>
-            </div>
+            {/* Location (Row 1) - Only show for events */}
+            {showLocation && (
+              <div className="flex items-center gap-2">
+                  <i className="uil uil-location-point text-base md:text-xl"></i>
+                  <span className={`text-base md:text-lg font-bold ${rethink_sans800.className}`}>{location}</span>
+              </div>
+            )}
 
             {/* Title (Row 2) - Optional based on design, but usually needed */}
             {title && (

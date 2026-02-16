@@ -1,5 +1,4 @@
 "use client";
-import { useRouter } from "next/navigation";
 import UniversalCard from "../Utility/UniversalCard";
 
 const EventCard = ({
@@ -9,27 +8,42 @@ const EventCard = ({
   StartDate,
   location,
   id,
+  Reports,
   type = "upcoming" // Default to upcoming
 }) => {
-  const router = useRouter();
-  
-  // Determine label based on type
+  // Determine label and link based on type
   const label = type === "past" ? "Download report" : "Register now";
+  
+  // For past events with Reports, trigger download instead of navigation
+  const handleClick = (e) => {
+    if (type === "past" && Reports) {
+      e.preventDefault();
+      const link = document.createElement("a");
+      link.href = Reports;
+      link.download = `${Title}.pdf`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(Reports);
+    }
+  };
 
   return (
     <div 
       data-aos="fade-up"
       className="w-[300px] md:w-[450px] min-w-[300px] h-[480px] md:h-[580px] flex-shrink-0"
     >
-      <UniversalCard
-        imageSrc={FeaturedURL}
-        title={Title}
-        date={StartDate}
-        location={location}
-        link={`/Events/${id}`}
-        label={label}
-        type={type}
-      />
+      <div onClick={handleClick}>
+        <UniversalCard
+          imageSrc={FeaturedURL}
+          title={Title}
+          date={StartDate}
+          location={location}
+          link={type === "past" && Reports ? "#" : `/Events/${id}`}
+          label={label}
+          type={type}
+        />
+      </div>
     </div>
   );
 };

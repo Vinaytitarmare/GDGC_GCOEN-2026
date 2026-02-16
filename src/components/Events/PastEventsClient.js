@@ -54,6 +54,7 @@ const PastEventsClient = ({ events }) => {
             FeaturedURL={event?.FeaturedURL}
             StartDate={event?.StartDate}
             location={event?.location}
+            Reports={event?.Reports}
             type="past"
           />
         ))}

@@ -10,8 +10,7 @@ const FooterHackON = () => {
         {/* Register Box from Figma */}
         {/* Register Box from Figma (Box + Hoverable Button) */}
 <Link
-  href="https://your-register-link.com"
-  target="_blank"
+  href="#register"
   className="relative w-full max-w-xl"
 >
   {/* Outer Box */}

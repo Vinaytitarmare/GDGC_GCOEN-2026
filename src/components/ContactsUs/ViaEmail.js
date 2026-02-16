@@ -6,13 +6,6 @@ import { thankContact } from "@/sampledata/HTMLTemplate";
 import ThankYouPage from "./ThankYouContact";
 import { AddDataToCollection } from "@/Services/Appwrite";
 import { ContactCollection } from "@/config/appwrite";
-import { createGlobalStyle } from "styled-components";
-
-const GlobalStyle = createGlobalStyle`
-  * {
-    font-family: "Segoe UI", sans-serif !important;
-  }
-`;
 
 const ViaEmail = () => {
   const [errorMsg, seterrorMsg] = useState("");
@@ -101,8 +94,7 @@ const ViaEmail = () => {
   };
 
   return (
-    <div className="w-full md:pr-10">
-      <GlobalStyle />
+    <div className="w-full md:pr-10" style={{ fontFamily: '"Segoe UI", sans-serif' }}>
       <form
         onSubmit={handleSubmit}
         className="md:mt-5 p-5 flex-col gap-5 flex border-2 rounded-3xl border-black"
