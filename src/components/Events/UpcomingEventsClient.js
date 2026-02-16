@@ -1,7 +1,7 @@
 "use client"; // Mark this as a Client Component
 
 // import React from "react";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import EventCard from "./EventCard";
 
 const UpcomingEventsClient = ({ events }) => {
@@ -39,7 +39,7 @@ const UpcomingEventsClient = ({ events }) => {
       {/* Scrollable Container */}
       <div
       ref={scrollRef}
-        className=" mt-4 flex gap-5 overflow-x-auto w-full"
+        className=" mt-4 flex gap-5 overflow-x-auto w-full py-4 px-2"
         style={{
           scrollbarWidth: "none", // Hide scrollbar for Firefox
         }}
