@@ -14,7 +14,7 @@ const UniversalCard = ({
   return (
     <Link href={link} className="block group h-full">
       {/* CONTAINER: Holds the stack */}
-      <div className="relative w-full h-full min-h-[400px]">
+      <div className="relative w-full h-full ">
         
         {/* 1. YELLOW BACKGROUND LAYER (The Rim) */}
         {/* Simplified: Sits behind the white card, offset slightly upwards */}
@@ -44,19 +44,19 @@ const UniversalCard = ({
             {/* Location (Row 1) */}
             <div className="flex items-center gap-2">
                 <i className="uil uil-location-point text-base md:text-xl"></i>
-                <span className={`text-base md:text-lg font-bold ${rethink_sans800.className}`}>{location}</span>
+                <span className={`text-base text-sm md:text-lg font-bold  line-clamp-1 ${rethink_sans800.className}`}>{location}</span>
             </div>
 
             {/* Title (Row 2) - Optional based on design, but usually needed */}
             {title && (
-                 <h3 className={`text-xl font-bold text-black line-clamp-2 leading-tight ${rethink_sans800.className}`}>
+                 <p className={`text-md font-bold text-black line-clamp-1 leading-tight ${rethink_sans800.className}`}>
                  {title}
-               </h3>
+               </p>
             )}
            
 
             {/* Footer: Action Button + Date */}
-            <div className="flex items-center justify-between mt-auto pt-2">
+            <div className="flex items-center justify-between mt-auto ">
               
               {/* Pill Button */}
               <div className="flex items-center gap-2 px-6 py-2 border-2 border-black rounded-full transition-colors group-hover:bg-black group-hover:text-white">
@@ -72,7 +72,7 @@ const UniversalCard = ({
               {/* Date with Calendar Icon */}
               {date && (
                 <div className="flex items-center gap-2 text-black">
-                  <i className="uil uil-calendar-alt text-xl"></i>
+                  <i className="uil uil-calendar-alt text-lg"></i>
                   <span className="text-sm font-bold">
                     {new Date(date).toLocaleDateString('en-GB').replace(/\//g, '-')}
                   </span>

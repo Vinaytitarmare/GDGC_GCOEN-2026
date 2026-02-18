@@ -1,7 +1,6 @@
 import { rethink_sans400 } from "@/Fonts/Rethink";
-import { Rethink_Sans, Poppins } from "next/font/google";
+import { Poppins, Rethink_Sans } from "next/font/google";
 import Link from "next/link";
-import React from "react";
 
 const rethink_sans = Rethink_Sans({
   weight: "800",
@@ -43,10 +42,10 @@ const SocialLinks = [
 
 const ViaSocial = () => {
   return (
-    <div className="w-full max-w-2xl mx-auto h-full min-h-0 flex flex-col gap-5 px-6 pt-0 pb-5 self-stretch md:mt-5">
+    <div className="w-full max-w-2xl mx-auto h-full min-h-0 flex flex-col gap-5  pt-0 pb-5 self-stretch md:mt-5">
       <div className="border-2 rounded-3xl border-black p-6 flex-[2] flex flex-col min-h-0 justify-between">
         <h4
-          className={`text-2xl md:text-[40px] mb-1 mt-2 font-normal ${rethink_sans400.className}`}
+          className={`text-2xl md:text-3xl mb-1 mt-2 font-normal ${rethink_sans400.className}`}
           style={{ color: '#FCCE48' }}
         >
           via Socials
@@ -68,10 +67,19 @@ const ViaSocial = () => {
           </Link>
         </div>
       </div>
-      <div className="border-2 rounded-3xl border-black px-5 py-3 text-left flex-none flex flex-col justify-center hover:bg-yellow-100 hover:border-yellow-500 transition-colors">
-        <div className={`text-4xl md:text-5xl font-light ${poppins.className}`}>Google Developer Group</div>
-        <div className={`text-4xl md:text-5xl font-light ${poppins.className}`}>On Campus •GCOEN</div>
-      </div>
+      <div
+      className="relative z-10 bg-white border border-black 
+      rounded-[18px] md:rounded-3xl px-5 py-2 md:px-8 md:py-6 text-sm md:text-2xl shadow-sm w-full md:w-full
+      cursor-pointer transition-all duration-300 ease-in-out
+      hover:bg-[rgba(255,249,221,1)] hover:-translate-y-1 hover:shadow-md"
+    >
+      <p className="font-semibold md:text-3xl">
+        Google Developer Group
+      </p>
+      <p className="mt-2 md:text-xl">
+        On Campus • GCOEN
+      </p>
+    </div>
     </div>
   );
 };

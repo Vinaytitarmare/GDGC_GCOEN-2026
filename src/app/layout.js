@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
           <Toaster position="top-center" reverseOrder={false} />
           <RenderAllModal />
           <Navbar />
-          <div className=" md:pt-32 text-base md:text-lg ">{children}</div>{" "}
+          <div className=" md:pt-10 text-base md:text-lg ">{children}</div>{" "}
         </AuthProvider>
         <Footer />
       </body>

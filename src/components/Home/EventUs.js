@@ -1,7 +1,6 @@
 import ActionBtn from "@/components/Utility/ActionBtn";
 import { rethink_sans800 } from "@/Fonts/Rethink";
 
-
 const EventUs = () => {
   const imageHoverStyles = "transition-all duration-300 ease-out hover:-translate-y-1 hover:-translate-x-1 hover:border-2 hover:border-[#ffd427] hover:shadow-[4px_4px_0px_0px_#ffd427]";
 
@@ -33,12 +32,15 @@ const EventUs = () => {
 
           {/* OUR EVENTS CARD */}
           <div className="w-full max-w-[1400px] mb-12 md:mb-20">
-            <div className="bg-white border-4 border-black rounded-[30px] md:rounded-[50px] overflow-hidden shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] md:shadow-2xl relative">
+            {/* Changed: border-2 md:border-4 and shadow-[4px_4px...] md:shadow-[8px_8px...] */}
+            <div className="bg-white border-2 md:border-4 border-black rounded-[30px] md:rounded-[50px] overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative">
               
               {/* 1. THIN GRAY TOP BAR */}
-              <div className="bg-gray-100 py-10 md:py-16 border-b-[3px] border-black relative">
+              {/* Changed: border-b-2 md:border-b-[3px] */}
+              <div className="bg-gray-100 py-10 md:py-16 border-b-2 md:border-b-[3px] border-black relative">
                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                   <div className="w-10 h-10 md:w-14 md:h-14 bg-[#ffd427] rounded-full border-4 border-black"></div>
+                   {/* Changed: border-2 md:border-4 */}
+                   <div className="w-10 h-10 md:w-14 md:h-14 bg-[#ffd427] rounded-full border-2 md:border-4 border-black"></div>
                  </div>
               </div>
 
@@ -76,35 +78,36 @@ const EventUs = () => {
           {/* SPACER BETWEEN SECTIONS */}
           <div className="h-10 md:h-20"></div>
 
-          {/* FEEDBACK/CTA CARD (Optimized for Mobile Height) */}
+          {/* FEEDBACK/CTA CARD */}
           <div className="w-full max-w-[1200px] mb-20 relative px-2 md:px-4 flex justify-center">
-            <div className="relative w-full shadow-[8px_8px_0_0_rgba(0,0,0,1)] md:shadow-[10px_10px_0_0_rgba(0,0,0,1)] rounded-[40px] md:rounded-[60px] overflow-hidden bg-[#e5e5e5] border-4 border-black">
+            {/* Changed: border-2 md:border-4 and shadow-[4px_4px...] md:shadow-[10px_10px...] */}
+            <div className="relative w-full shadow-[4px_4px_0_0_rgba(0,0,0,1)] md:shadow-[10px_10px_0_0_rgba(0,0,0,1)] rounded-[40px] md:rounded-[60px] overflow-hidden bg-[#e5e5e5] border-2 md:border-4 border-black">
 
               <div className="pt-8 pb-16 md:pt-16 md:pb-32 text-center px-6 relative z-0">
                 <h2 className={`text-2xl md:text-5xl font-bold ${rethink_sans800.className}`}>
                   Excited?
                 </h2>
                 <p className="text-lg md:text-xl mt-2 md:mt-4 font-medium text-gray-800">
-                  why wait ! Join Hack On now!
+                  Why wait ! Join Hack On now!
                 </p>
               </div>
 
-              {/* Yellow Layer (Reduced height on mobile) */}
+              {/* Yellow Layer */}
               <div className="absolute left-0 right-0 h-16 md:h-32 -mt-12 md:-mt-24 z-10">
-                <div className="w-full h-full bg-[#ffd427] rounded-t-[30px] md:rounded-t-[50px] border-t-4 border-black"></div>
+                {/* Changed: border-t-2 md:border-t-4 */}
+                <div className="w-full h-full bg-[#ffd427] rounded-t-[30px] md:rounded-t-[50px] border-t-2 md:border-t-4 border-black"></div>
               </div>
 
-              {/* White Layer (Tighter on mobile) */}
-              <div className="relative bg-white -mt-[40px] md:-mt-[86px] pt-8 pb-8 md:pt-16 md:pb-16 rounded-t-[30px] md:rounded-t-[50px] border-t-4 border-black z-20 px-6 text-center">
+              {/* White Layer */}
+              {/* Changed: border-t-2 md:border-t-4 */}
+              <div className="relative bg-white -mt-[40px] md:-mt-[86px] pt-8 pb-8 md:pt-16 md:pb-16 rounded-t-[30px] md:rounded-t-[50px] border-t-2 md:border-t-4 border-black z-20 px-6 text-center">
                  <div className="flex justify-center scale-90 md:scale-100">
-                   <ActionBtn text="Register Now" href="/ContactUs" />
+                   <ActionBtn text="Register Now" href="/hackon" />
                  </div>
               </div>
 
             </div>
           </div>
-
-          
         </div>
       </div>
     </div>

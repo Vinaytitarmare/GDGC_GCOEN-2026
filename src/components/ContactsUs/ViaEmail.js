@@ -1,12 +1,12 @@
 "use client";
-import React, { useState } from "react";
-import DefaultBtn from "../Utility/DefaultBtn";
 import { rethink_sans400 } from "@/Fonts/Rethink";
-import { thankContact } from "@/sampledata/HTMLTemplate";
-import ThankYouPage from "./ThankYouContact";
 import { AddDataToCollection } from "@/Services/Appwrite";
 import { ContactCollection } from "@/config/appwrite";
+import { thankContact } from "@/sampledata/HTMLTemplate";
+import { useState } from "react";
 import { createGlobalStyle } from "styled-components";
+import DefaultBtn from "../Utility/DefaultBtn";
+import ThankYouPage from "./ThankYouContact";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -101,14 +101,14 @@ const ViaEmail = () => {
   };
 
   return (
-    <div className="w-full md:pr-10">
+    <div className="w-full max-w-2xl mx-auto">
       <GlobalStyle />
       <form
         onSubmit={handleSubmit}
         className="md:mt-5 p-5 flex-col gap-5 flex border-2 rounded-3xl border-black"
       >
         <h4
-          className={`text-2xl md:text-[40px] mb-1 font-normal ${rethink_sans400.className}`}
+          className={`text-2xl md:text-3xl font-bold mb-1 font-normal ${rethink_sans400.className}`}
           style={{ color: '#FCCE48' }}
         >
           via Email

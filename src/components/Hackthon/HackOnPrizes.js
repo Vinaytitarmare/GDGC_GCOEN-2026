@@ -70,8 +70,8 @@ const HackOnPrizes = () => {
           bg="/prizes/prize-bg-gold.png"
           title="1st Prize"
           amount="₹10,000"
-          height="clamp(240px, 60vw, 480px)"
-          trophyOffset="14px"
+          height="clamp(280px, 30vw, 480px)"
+          trophyOffset="10px"
           titleColor="text-yellow-300"
           amountColor="text-yellow-400"
         />

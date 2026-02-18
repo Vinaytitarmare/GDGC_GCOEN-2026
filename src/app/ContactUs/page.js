@@ -2,7 +2,7 @@
 import ViaEmail from "@/components/ContactsUs/ViaEmail";
 import ViaSocial from "@/components/ContactsUs/ViaSocial";
 import { Rethink_Sans } from "next/font/google";
-import React from "react";
+
 
 export const metadata = {
   title: "Contact Us",
@@ -10,20 +10,26 @@ export const metadata = {
 };
 
 const rethink_sans = Rethink_Sans({
-  weight: "400",
+  weight: "800",
   subsets: ["latin", "latin-ext"],
 });
 
 const ContactUs = () => {
   return (
-    <div className="relative mt-14 md:mt-0 py-10">
-      <h2
-        className={`text-3xl md:text-[64px] mb-1 font-normal ${rethink_sans.className}`}
-      >
-        Contact us
-      </h2>
+    <div className="relative md:mt-0 py-10">
+      <div className="md:gap-10 gap-5 max-w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 md:gap-10 gap-5">
+            <div className="w-full max-w-2xl mx-auto">
+              <p
+                className={`text-3xl md:text-4xl font-bold mb-1  ${rethink_sans.className}`}
+              >
+                Contact us
+              </p>
+            </div>
+        </div>
+      </div>
 
-      <div className="mt-5 grid grid-cols-1 md:grid-cols-2 md:gap-10 gap-5 md:items-stretch">
+      <div className="mt-5 grid grid-cols-1  md:grid-cols-2 md:gap-10 gap-5 md:items-stretch">
         <ViaEmail />
         <ViaSocial />
       </div>

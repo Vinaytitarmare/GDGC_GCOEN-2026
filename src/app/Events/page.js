@@ -13,7 +13,7 @@ const EventPage = async () => {
     <div className="flex flex-col gap-10">
       <div>
         <p
-          className={`${rethink_sans800.className} text-3xl md:text-4xl font-semibold`}
+          className={`${rethink_sans800.className} text-2xl md:text-4xl font-semibold`}
         >
           Upcoming Events
         </p>
@@ -21,7 +21,7 @@ const EventPage = async () => {
       <UpComingEvents EventPage="Upcoming Events" Eventype="upcoming" />
       <div>
         <p
-          className={`${rethink_sans800.className} text-3xl md:text-4xl font-semibold`}
+          className={`${rethink_sans800.className} text-2xl md:text-4xl font-semibold`}
         >
           Pasts Events
         </p>

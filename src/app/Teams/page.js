@@ -47,10 +47,10 @@ export default function TeamsPage() {
 
       {/* ================= CONTENT ================= */}
 
-      <div className="relative z-10 max-w-6xl mx-auto">
+      <div className="relative z-10 px-4 max-w-6xl mx-auto">
 
         {/* Heading */}
-        <h1 className="text-3xl md:text-5xl font-semibold mb-14">
+        <h1 className="text-3xl md:text-4xl font-bold font-black text-black mb-14">
           Teams
         </h1>
 
@@ -70,7 +70,7 @@ export default function TeamsPage() {
                     transition-all duration-300 ease-in-out
                     hover:bg-[rgba(255,249,221,1)] hover:-translate-y-1 hover:shadow-md"
                   >
-                    <div className="w-full h-[320px] overflow-hidden">
+                    <div className="w-full aspect-[553/340] overflow-hidden">
                       <img
                         src={team.image}
                         alt={team.name}
@@ -200,15 +200,15 @@ export default function TeamsPage() {
                 className="border-2 border-black rounded-2xl overflow-hidden 
                 bg-white shadow-sm cursor-pointer
                 transition-all duration-300 ease-in-out
-                hover:bg-[rgba(255,249,221,1)] hover:-translate-y-1 hover:shadow-md"
+                hover:bg-[rgba(255,249,221,1)] hover:-translate-y-1 hover:shadow-md "
               >
-                <div className="w-full h-[320px] overflow-hidden">
-                  <img
-                    src={team.image}
-                    alt={team.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+                    <div className="w-full aspect-[553/340] overflow-hidden">
+                      <img
+                        src={team.image}
+                        alt={team.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
 
                 <div className="text-center py-3 font-medium border-t-2 border-black">
                   {team.name}

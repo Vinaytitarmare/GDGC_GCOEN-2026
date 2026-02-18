@@ -19,7 +19,7 @@ const EventCard = ({
   return (
     <div 
       data-aos="fade-up"
-      className="w-[300px] md:w-[450px] min-w-[300px] h-[480px] md:h-[580px] flex-shrink-0"
+      className="w-[320px] md:w-[450px] min-w-[300px] h-[350px] md:h-[480px] flex-shrink-0"
     >
       <UniversalCard
         imageSrc={FeaturedURL}
