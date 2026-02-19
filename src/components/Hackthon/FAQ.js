@@ -131,14 +131,15 @@ const FAQ = () => {
         FAQ
       </h1>
 
+      // ... (previous code)
+
       <div className="flex flex-col md:flex-row gap-5">
         {/* Tabs */}
         <div className="md:w-1/4">
           <div className="flex flex-row sm:flex-col gap-6 overflow-x-auto sm:overflow-hidden scrollbar-hide">
             {Object.keys(faqData).map((tab) => (
-              <div>
+              <div key={tab}> 
                 <button
-                  key={tab}
                   onClick={() => setActiveTab(tab)}
                   className={`px-4 py-2 rounded-full text-left transition-colors border-solid border-white border-2 ${
                     activeTab === tab

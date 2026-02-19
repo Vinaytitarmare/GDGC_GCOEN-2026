@@ -1,12 +1,10 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { rethink_sans400, rethink_sans800 } from "@/Fonts/Rethink";
 
 /**
  * Updated SocialButton based on ViaSocial UI.
- * Replaces the old image-only SocialLink.
  */
 const SocialButton = ({ icon, link, label }) => {
   return (
@@ -57,14 +55,7 @@ const LogoImage = () => {
   );
 };
 
-const Footer = () => {
-  const pathname = usePathname();
-
-  // Condition to hide the footer on "/Teams", "/Events", and "/ContactUs"
-  if (pathname && (pathname.startsWith("/Teams") || pathname.startsWith("/Events") || pathname.startsWith("/ContactUs") || pathname.startsWith("/Blogs"))) {
-  return null; 
-}
-
+const EventBlogFooter = () => {
   const socialLinks = [
     { label: "Instagram", icon: "uil-instagram", link: "https://www.instagram.com/gdgcgcoen/" },
     { label: "Whatsapp", icon: "uil-whatsapp", link: "https://chat.whatsapp.com/Ge1u3fw4eOzEOIiUG6z6aJ" },
@@ -81,8 +72,9 @@ const Footer = () => {
       <footer className="hidden md:flex justify-center w-full py-10 bg-transparent relative z-30">
         <div className="container m-auto px-4 flex justify-center">
           
+          {/* Main Pill Box - Background changed to #FFF9DD */}
           <div
-            className="border-2 border-black rounded-[62px] bg-white relative flex items-center justify-center shadow-lg"
+            className="border-2 border-black rounded-[62px] bg-[#FFF9DD] relative flex items-center justify-center shadow-lg"
             style={{
               width: "1250px",
               height: "180px",
@@ -158,7 +150,7 @@ const Footer = () => {
           flexDirection: "column",
           alignItems: "center",
           gap: "20px",
-          backgroundColor: "white"
+          backgroundColor: "#FFF9DD" // Background changed to #FFF9DD
         }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "12px", alignItems: "center" }}>
             <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "center" }}>
@@ -209,4 +201,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default EventBlogFooter;
