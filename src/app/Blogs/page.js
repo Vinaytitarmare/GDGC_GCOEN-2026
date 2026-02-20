@@ -26,10 +26,10 @@ const BlogPage = async () => {
     // ERROR / EMPTY STATE
     if (!res || res?.documents?.length === 0) {
       return (
-        <div className="container mx-auto px-5 py-4 ">
+        <div className="container mx-auto px-5 ">
           {/* Simple Left Aligned Header */}
-          <div className="mb-12">
-            <p className={`${rethink_sans800.className}  text-3xl md:text-4xl font-semibold font-black text-black mb-2`}>
+          <div className="">
+            <p className={`${rethink_sans800.className}  text-2xl md:text-4xl font-semibold font-black text-black mb-2`}>
               Blogs
             </p>
           </div>
@@ -43,11 +43,11 @@ const BlogPage = async () => {
     
     // SUCCESS STATE
     return (
-      <div className="container mx-auto px-5 py-4 ">
+      <div className="container mx-auto px-5">
         
         {/* HEADER SECTION - Left Aligned & Simple */}
-        <div className="mb-16">
-          <p className={`${rethink_sans800.className}  text-3xl md:text-4xl font-semibold font-black text-black mb-4`}>
+        <div className="mb-5">
+          <p className={`${rethink_sans800.className}  text-2xl md:text-4xl font-semibold font-black text-black mb-4`}>
             Blogs
           </p>
          

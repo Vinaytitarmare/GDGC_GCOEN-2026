@@ -104,7 +104,7 @@ const ViaEmail = () => {
       >
         <h4
           className={`text-2xl md:text-3xl font-bold mb-1 font-normal ${rethink_sans400.className}`}
-          style={{ color: '#FCCE48' }}
+          style={{ color: '#F9AB00' }}
         >
           via Email
         </h4>

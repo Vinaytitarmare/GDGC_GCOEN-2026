@@ -16,7 +16,7 @@ export default function TeamsPage() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-white px-6 py-6 mt-3 overflow-hidden font-sans">
+    <div className="relative min-h-screen bg-white px-6 pt-5 pb-6 overflow-hidden font-sans">
 
 
       {/* ================= BACKGROUND IMAGES ================= */}
@@ -50,7 +50,7 @@ export default function TeamsPage() {
       <div className="relative z-10 px-4 max-w-6xl mx-auto">
 
         {/* Heading */}
-        <h1 className="text-3xl md:text-4xl font-bold font-black text-black mb-14">
+        <h1 className="text-2xl md:text-4xl font-semibold font-black text-black mb-5">
           Teams
         </h1>
 

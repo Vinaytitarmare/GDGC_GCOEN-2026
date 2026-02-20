@@ -21,10 +21,11 @@ const Hackon = () => {
     <div className="fixed  top-0  flex-col  flex md:gap-5 left-0 w-full  overflow-y-scroll overflow-scroll h-screen z-50 bg-black ">
       <LandingPageHackOn />
       <HackOnInfo />
+      <HackOnPrizes />
       <WhyParticipant />
       <JoinCommunity />
       <FollowForUpdates />
-      <HackOnPrizes />
+      
       <HackOnPartners />
       <FAQ />
       {/* <Image src="/HackOnStrip.svg" width={20} height={30} className="w-full" /> */}

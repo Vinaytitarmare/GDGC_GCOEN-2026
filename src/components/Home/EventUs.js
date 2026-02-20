@@ -8,7 +8,7 @@ const EventUs = () => {
   return (
     <div className="w-screen min-h-screen overflow-x-hidden bg-white flex flex-col">
       <div 
-        className="relative w-full bg-[#ffd427] flex-grow"
+        className="relative w-full bg-[#ffd427] flex-grow flex flex-col"
         style={{
           backgroundImage: `
             linear-gradient(to right, black 2px, transparent 2px),
@@ -29,18 +29,15 @@ const EventUs = () => {
         </div>
 
         {/* --- MAIN CONTENT AREA --- */}
-        <div className="w-full px-4 md:px-8 relative z-30 pt-32 md:pt-40 pb-0.5 flex flex-col items-center">
+        <div className="w-full px-4 md:px-8 relative z-30 pt-32 md:pt-40 flex flex-col items-center flex-grow">
 
           {/* OUR EVENTS CARD */}
           <div className="w-full max-w-[1400px] mb-12 md:mb-20">
-            {/* Changed: border-2 md:border-4 and shadow-[4px_4px...] md:shadow-[8px_8px...] */}
             <div className="bg-white border-2 md:border-4 border-black rounded-[30px] md:rounded-[50px] overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative">
               
               {/* 1. THIN GRAY TOP BAR */}
-              {/* Changed: border-b-2 md:border-b-[3px] */}
               <div className="bg-gray-100 py-10 md:py-16 border-b-2 md:border-b-[3px] border-black relative">
                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                   {/* Changed: border-2 md:border-4 */}
                    <div className="w-10 h-10 md:w-14 md:h-14 bg-[#ffd427] rounded-full border-2 md:border-4 border-black"></div>
                  </div>
               </div>
@@ -81,7 +78,6 @@ const EventUs = () => {
 
           {/* FEEDBACK/CTA CARD */}
           <div className="w-full max-w-[1200px] mb-20 relative px-2 md:px-4 flex justify-center">
-            {/* Changed: border-2 md:border-4 and shadow-[4px_4px...] md:shadow-[10px_10px...] */}
             <div className="relative w-full shadow-[4px_4px_0_0_rgba(0,0,0,1)] md:shadow-[10px_10px_0_0_rgba(0,0,0,1)] rounded-[40px] md:rounded-[60px] overflow-hidden bg-[#e5e5e5] border-2 md:border-4 border-black">
 
               <div className="pt-8 pb-16 md:pt-16 md:pb-32 text-center px-6 relative z-0">
@@ -95,12 +91,10 @@ const EventUs = () => {
 
               {/* Yellow Layer */}
               <div className="absolute left-0 right-0 h-16 md:h-32 -mt-12 md:-mt-24 z-10">
-                {/* Changed: border-t-2 md:border-t-4 */}
                 <div className="w-full h-full bg-[#ffd427] rounded-t-[30px] md:rounded-t-[50px] border-t-2 md:border-t-4 border-black"></div>
               </div>
 
               {/* White Layer */}
-              {/* Changed: border-t-2 md:border-t-4 */}
               <div className="relative bg-white -mt-[40px] md:-mt-[86px] pt-8 pb-8 md:pt-16 md:pb-16 rounded-t-[30px] md:rounded-t-[50px] border-t-2 md:border-t-4 border-black z-20 px-6 text-center">
                  <div className="flex justify-center scale-90 md:scale-100">
                    <ActionBtn text="Register Now" href="/hackon" />
@@ -111,10 +105,19 @@ const EventUs = () => {
           </div>
           
           {/* FOOTER INSIDE YELLOW BACKGROUND */}
-          <div className="w-full">
+          <div className="w-full mb-10 md:mb-16">
             <Footer />
           </div>
+
+        </div> {/* <-- This closing div was moved up so the line below can stretch edge-to-edge! */}
+
+        {/* THICK RED, GREEN, BLUE PARTITIONED LINE */}
+        <div className="w-full flex h-[10px] relative z-30 mt-auto">
+          <div className="flex-1 bg-[#EA4335]"></div> {/* Red */}
+          <div className="flex-1 bg-[#34A853]"></div> {/* Green */}
+          <div className="flex-1 bg-[#4285F4]"></div> {/* Blue */}
         </div>
+
       </div>
     </div>
   );

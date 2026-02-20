@@ -35,7 +35,7 @@ const ViaSocial = () => {
       <div className="border-2 rounded-3xl border-black p-6 flex-[2] flex flex-col min-h-0 justify-between">
         <h4
           className={`text-2xl md:text-3xl mb-1 mt-2 font-normal ${rethink_sans400.className}`}
-          style={{ color: '#FCCE48' }}
+          style={{ color: '#F9AB00' }}
         >
           via Socials
         </h4>
@@ -49,9 +49,9 @@ const ViaSocial = () => {
         >
           or
         </p>
-        <div className="text-center text-lg md:text-xl mb-6 pb-2">
+        <div className="text-center text-2xl md:text-3xl mb-6 pb-2">
           Email us at: {" "}
-          <Link className="font-semibold" href="mailto:gdsc.gcoen@gmail.com">
+          <Link className="text-2xl md:text-3xl font-semibold" href="mailto:gdsc.gcoen@gmail.com">
             gdsc.gcoen@gmail.com
           </Link>
         </div>
@@ -62,10 +62,10 @@ const ViaSocial = () => {
       cursor-pointer transition-all duration-300 ease-in-out
       hover:bg-[rgba(255,249,221,1)] hover:-translate-y-1 hover:shadow-md"
     >
-      <p className="font-semibold md:text-3xl">
+      <p className="text-2xl md:text-3xl">
         Google Developer Group
       </p>
-      <p className="mt-2 md:text-xl">
+      <p className="text-2xl md:text-3xl">
         On Campus • GCOEN
       </p>
     </div>

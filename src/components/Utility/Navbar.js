@@ -154,12 +154,12 @@ const Navbar = () => {
       >
         <div
           className="flex flex-col bg-blue md:bg-black md:flex-row md:items-center md:justify-center gap-2 sm:gap-3 md:gap-0 overflow-visible border-black w-full md:h-[50px] xl:h-[55px] 2xl:h-[65px] md:px-0"
-          style={{ borderWidth: 0, borderRadius: 24 }}
+          style={{ borderWidth: 0, borderRadius: 12 }}
         >
           
            <button
             className="flex items-center border-black px-2 py-2 sm:px-[10px] sm:py-[10px] md:w-[170px] md:h-[50px] lg:w-[240px] xl:w-[280px] xl:h-[55px] 2xl:w-[337px] 2xl:h-[65px] transition-colors text-nowrap w-full animate-none"
-            style={{ borderWidth: 2, borderRadius: 24, backgroundColor: hoverGDGC ? "#f8d8d8" : "white", marginRight: -1 }}
+            style={{ borderWidth: 2, borderRadius: 12, backgroundColor: hoverGDGC ? "#f8d8d8" : "white", marginRight: -1 }}
             onClick={() => {
               router.push("/");
               setMenuOpen(false);
@@ -183,7 +183,7 @@ const Navbar = () => {
               <button
                 key={item.name}
                 className={`flex items-center justify-center border-black text-black text-xs sm:text-sm md:text-xs lg:text-lg xl:text-2xl 2xl:text-[29px] leading-tight md:leading-[30px] xl:leading-[40px] 2xl:leading-[44px] md:h-[50px] xl:h-[55px] 2xl:h-[65px] px-2 sm:px-2 py-2 sm:py-2 ${item.width} transition-colors w-full ${poppins400.className}`}
-                style={{ borderWidth: 2, borderRadius: 24, backgroundColor: bgColor, marginLeft: -1, marginRight: -1 }}
+                style={{ borderWidth: 2, borderRadius: 12, backgroundColor: bgColor, marginLeft: -1, marginRight: -1 }}
                 onClick={() => {
                   router.push(item.path);
                   setMenuOpen(false);

@@ -10,12 +10,12 @@ export const metadata = {
 
 const ContactUs = () => {
   return (
-    <div className="relative md:mt-0 py-10">
+    <div className="relative">
       <div className="md:gap-10 gap-5 max-w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-10 gap-5">
             <div className="w-full max-w-2xl mx-auto">
               <p
-                className={`text-3xl md:text-4xl font-bold mb-1  ${rethink_sans800.className}`}
+                className={`text-2xl md:text-4xl font-semibold mb-1  ${rethink_sans800.className}`}
               >
                 Contact us
               </p>
