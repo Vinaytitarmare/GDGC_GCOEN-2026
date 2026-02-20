@@ -132,31 +132,29 @@ const FAQ = () => {
         FAQ
       </h1>
 
-      <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+      <div className="flex flex-col gap-4">
 
-        {/* Tabs — horizontal scroll on mobile, vertical column on desktop */}
-        <div className="md:w-1/4 flex-shrink-0">
-          <div className="flex md:flex-col gap-2 md:gap-3 overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
-            {Object.keys(faqData).map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-4 py-2 rounded-full text-sm md:text-base text-left transition-all duration-200 border border-white/60 whitespace-nowrap flex-shrink-0 ${
-                  activeTab === tab
-                    ? "bg-[#F9AB00] text-black border-[#F9AB00] font-semibold"
-                    : "text-white hover:bg-white/10"
-                }`}
-              >
-                {faqData[tab].title}
-              </button>
-            ))}
-          </div>
+        {/* Tabs — horizontal row on all screen sizes */}
+        <div className="flex gap-2 md:gap-3 overflow-x-auto pb-2 scrollbar-hide">
+          {Object.keys(faqData).map((tab) => (
+            <button
+              key={tab}
+              onClick={() => setActiveTab(tab)}
+              className={`px-5 py-2.5 rounded-full text-sm md:text-base transition-all duration-200 border whitespace-nowrap flex-shrink-0 ${
+                activeTab === tab
+                  ? "bg-[#F9AB00] text-black border-[#F9AB00] font-semibold"
+                  : "text-white border-white/40 hover:bg-white/10"
+              }`}
+            >
+              {faqData[tab].title}
+            </button>
+          ))}
         </div>
 
         {/* Questions Panel */}
-        <div className="flex-1 border border-white/40 rounded-2xl overflow-hidden">
+        <div className="border border-white/40 rounded-2xl overflow-hidden">
           {/* Active Tab Header */}
-          <div className="bg-[#F9AB00] px-5 md:px-8 py-4 md:py-6">
+          <div className="bg-[#F9AB00] px-5 md:px-8 py-3 md:py-4">
             <h2 className="text-lg md:text-2xl font-bold text-black">
               {faqData[activeTab].title}
             </h2>

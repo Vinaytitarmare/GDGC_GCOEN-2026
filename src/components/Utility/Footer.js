@@ -5,27 +5,23 @@ import { usePathname } from "next/navigation";
 import { rethink_sans400, rethink_sans800 } from "@/Fonts/Rethink";
 
 /**
- * Updated SocialButton based on ViaSocial UI.
- * Replaces the old image-only SocialLink.
+ * Updated SocialButton
+ * Now accepts a customClasses prop so we can style the desktop and mobile versions independently!
  */
-const SocialButton = ({ icon, link, label }) => {
+const SocialButton = ({ icon, link, label, customClasses = "" }) => {
   return (
     <Link
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className={`group text-xs md:text-sm text-black ${rethink_sans400.className} flex items-center justify-center border border-black rounded-full px-4 py-2 gap-2 bg-white hover:border-[#FCCE48] hover:text-[#FCCE48] transition-all duration-300 whitespace-nowrap hover:-translate-y-1 shadow-sm hover:shadow-md`}
+      className={`group text-[10px] md:text-xs xl:text-sm text-black ${rethink_sans400.className} flex items-center justify-center border border-black rounded-full px-3 py-1.5 lg:px-4 lg:py-2 gap-1 lg:gap-2 bg-white hover:border-[#FCCE48] hover:text-[#FCCE48] transition-all duration-300 whitespace-nowrap hover:-translate-y-1 shadow-sm hover:shadow-md ${customClasses}`}
     >
-      <i className={`uil ${icon} text-base md:text-xl text-black group-hover:text-[#FCCE48] transition-colors flex-shrink-0`} />
-      <span className="font-medium">{label}</span>
+      <i className={`uil ${icon} text-sm lg:text-base xl:text-xl text-black group-hover:text-[#FCCE48] transition-colors flex-shrink-0`} />
+      <span className="font-medium truncate">{label}</span>
     </Link>
   );
 };
 
-/**
- * Stable Logo component with constant size and golden glow.
- * (Removed absolute positioning to prevent overlap)
- */
 const LogoImage = () => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -34,9 +30,7 @@ const LogoImage = () => {
       className="flex items-center justify-end w-full max-w-[350px]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{
-        height: "80px",
-      }}
+      style={{ height: "80px" }}
     >
       <img
         src={isHovered ? "/goldengdg.png" : "/whitegdgc.png"}
@@ -60,7 +54,6 @@ const LogoImage = () => {
 const Footer = () => {
   const pathname = usePathname();
 
-  // Condition to hide the footer on "/Teams", "/Events", and "/ContactUs"
   if (pathname && (pathname.startsWith("/Teams") || pathname.startsWith("/Events") || pathname.startsWith("/ContactUs") || pathname.startsWith("/Blogs"))) {
     return null; 
   }
@@ -81,58 +74,36 @@ const Footer = () => {
       <footer className="hidden md:flex justify-center w-full py-10 bg-transparent relative z-30">
         <div className="container m-auto px-4 flex justify-center">
           
-          {/* Main Pill Box - Converted to Flexbox layout */}
-          <div
-            className="border-2 border-black rounded-[62px] bg-white w-full max-w-[1250px] min-h-[180px] flex items-center justify-between px-6 lg:px-12 py-6 shadow-lg gap-4"
-          >
+          <div className="border-2 border-black rounded-[62px] bg-white w-full max-w-[1250px] min-h-[180px] flex items-center justify-between px-4 lg:px-12 py-6 shadow-lg gap-2 lg:gap-4">
+            
             {/* Left Section - Social Buttons */}
-            {/* flex-1 ensures it shares space evenly with the right side */}
-            <div className="flex-1 flex flex-col gap-3">
-              <div className="flex flex-wrap gap-3">
-                <SocialButton 
-                  label={socialLinks[0].label} 
-                  icon={socialLinks[0].icon} 
-                  link={socialLinks[0].link} 
-                />
-                <SocialButton 
-                  label={socialLinks[1].label} 
-                  icon={socialLinks[1].icon} 
-                  link={socialLinks[1].link} 
-                />
-                <SocialButton 
-                  label={socialLinks[2].label} 
-                  icon={socialLinks[2].icon} 
-                  link={socialLinks[2].link} 
-                />
+            <div className="flex-1 flex flex-col gap-2 lg:gap-3 overflow-hidden pr-2">
+              
+              {/* Row 1: CSS Grid strictly forces 3 columns */}
+              <div className="grid grid-cols-3 gap-1 lg:gap-2 w-full">
+                <SocialButton customClasses="w-full" label={socialLinks[0].label} icon={socialLinks[0].icon} link={socialLinks[0].link} />
+                <SocialButton customClasses="w-full" label={socialLinks[1].label} icon={socialLinks[1].icon} link={socialLinks[1].link} />
+                <SocialButton customClasses="w-full" label={socialLinks[2].label} icon={socialLinks[2].icon} link={socialLinks[2].link} />
               </div>
-              <div className="flex flex-wrap gap-3">
-                <SocialButton 
-                  label={socialLinks[3].label} 
-                  icon={socialLinks[3].icon} 
-                  link={socialLinks[3].link} 
-                />
-                <SocialButton 
-                  label={socialLinks[4].label} 
-                  icon={socialLinks[4].icon} 
-                  link={socialLinks[4].link} 
-                />
+
+              {/* Row 2: CSS Grid strictly forces 2 columns. Sized to 66.66% to align perfectly with the 3 above */}
+              <div className="grid grid-cols-2 gap-1 lg:gap-2 w-[66.66%]">
+                <SocialButton customClasses="w-full" label={socialLinks[3].label} icon={socialLinks[3].icon} link={socialLinks[3].link} />
+                <SocialButton customClasses="w-full" label={socialLinks[4].label} icon={socialLinks[4].icon} link={socialLinks[4].link} />
               </div>
+
             </div>
 
             {/* Center Graphic */}
-            <div className="w-[80px] lg:w-[110px] flex-shrink-0 flex justify-center">
-              <img
-                src="/vector26.png"
-                alt="Vector"
-                className="w-full h-auto object-contain"
-              />
+            <div className="w-[60px] lg:w-[80px] flex-shrink-0 flex justify-center">
+              <img src="/gdgfooter.png" alt="Vector" className="w-full h-auto object-contain" />
             </div>
 
             {/* Right Section - Logo */}
-            {/* flex-1 ensures it pushes the center image directly into the middle */}
             <div className="flex-1 flex justify-end">
               <LogoImage />
             </div>
+            
           </div>
         </div>
       </footer>
@@ -152,40 +123,25 @@ const Footer = () => {
           backgroundColor: "white"
         }}>
           <div style={{ display: "flex", flexDirection: "column", gap: "12px", alignItems: "center" }}>
+            
+            {/* Notice: No customClasses="w-full" here, so they wrap perfectly based on their natural width */}
             <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "center" }}>
-              <SocialButton 
-                label={socialLinks[0].label} 
-                icon={socialLinks[0].icon} 
-                link={socialLinks[0].link} 
-              />
-              <SocialButton 
-                label={socialLinks[1].label} 
-                icon={socialLinks[1].icon} 
-                link={socialLinks[1].link} 
-              />
-              <SocialButton 
-                label={socialLinks[2].label} 
-                icon={socialLinks[2].icon} 
-                link={socialLinks[2].link} 
-              />
+              <SocialButton label={socialLinks[0].label} icon={socialLinks[0].icon} link={socialLinks[0].link} />
+              <SocialButton label={socialLinks[1].label} icon={socialLinks[1].icon} link={socialLinks[1].link} />
+              <SocialButton label={socialLinks[2].label} icon={socialLinks[2].icon} link={socialLinks[2].link} />
             </div>
+            
             <div style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "center" }}>
-              <SocialButton 
-                label={socialLinks[3].label} 
-                icon={socialLinks[3].icon} 
-                link={socialLinks[3].link} 
-              />
-              <SocialButton 
-                label={socialLinks[4].label} 
-                icon={socialLinks[4].icon} 
-                link={socialLinks[4].link} 
-              />
+              <SocialButton label={socialLinks[3].label} icon={socialLinks[3].icon} link={socialLinks[3].link} />
+              <SocialButton label={socialLinks[4].label} icon={socialLinks[4].icon} link={socialLinks[4].link} />
             </div>
+
           </div>
+          
           <img
-            src="/vector26.png"
+            src="/gdgfooter.png"
             alt="Vector"
-            style={{ width: "80px", height: "auto" }}
+            style={{ width: "60px", height: "auto" }}
           />
           <div style={{ width: "280px", height: "auto" }}>
             <img
