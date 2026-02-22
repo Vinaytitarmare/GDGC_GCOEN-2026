@@ -48,20 +48,32 @@ const EventUs = () => {
                   Our Events
                 </h2>
 
+                {/* FIXED GRID LAYOUT */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 md:mb-8">
-                  <div className="md:row-span-2 h-[250px] md:h-full">
+                  {/* Left Column: 1 large image */}
+                  <div className="h-[250px] md:h-[450px] w-full">
                     <img 
                       src="/EventPhoto1.svg" 
                       alt="Event 1" 
                       className={`w-full h-full object-cover rounded-2xl border-2 border-black md:border-transparent ${imageHoverStyles}`} 
                     />
                   </div>
-                  <div className="flex flex-col gap-4">
-                    <div className="h-[180px] md:h-auto">
-                      <img src="/EventPhoto2.svg" alt="Event 2" className={`w-full h-full object-cover rounded-2xl border-2 border-black md:border-transparent ${imageHoverStyles}`} />
+                  
+                  {/* Right Column: 2 smaller images stacked, taking up exactly 50% height each minus the gap */}
+                  <div className="flex flex-col gap-4 h-[400px] md:h-[450px]">
+                    <div className="flex-1 w-full h-1/2">
+                      <img 
+                        src="/EventPhoto2.svg" 
+                        alt="Event 2" 
+                        className={`w-full h-full object-cover rounded-2xl border-2 border-black md:border-transparent ${imageHoverStyles}`} 
+                      />
                     </div>
-                    <div className="h-[180px] md:h-auto">
-                      <img src="/EventPhoto3.svg" alt="Event 3" className={`w-full h-full object-cover rounded-2xl border-2 border-black md:border-transparent ${imageHoverStyles}`} />
+                    <div className="flex-1 w-full h-1/2">
+                      <img 
+                        src="/EventPhoto3.svg" 
+                        alt="Event 3" 
+                        className={`w-full h-full object-cover rounded-2xl border-2 border-black md:border-transparent ${imageHoverStyles}`} 
+                      />
                     </div>
                   </div>
                 </div>
@@ -85,7 +97,7 @@ const EventUs = () => {
                   Excited?
                 </h2>
                 <p className="text-lg md:text-xl mt-2 md:mt-4 font-medium text-gray-800">
-                  Why wait ! Join Hack On 2.0 now!
+                  Why wait ! Join Hack On now!
                 </p>
               </div>
 

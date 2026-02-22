@@ -22,29 +22,32 @@ const SocialButton = ({ icon, link, label, customClasses = "" }) => {
   );
 };
 
+/**
+ * Stable Logo component with constant size and golden glow.
+ * FIXED: Removed hardcoded 80px height so it naturally scales down on smaller screens.
+ */
 const LogoImage = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div 
-      className="flex items-center justify-end w-full max-w-[350px]"
+      className="flex items-center justify-end w-full max-w-[180px] md:max-w-[250px] lg:max-w-[350px]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      style={{ height: "80px" }}
     >
       <img
         src={isHovered ? "/goldengdg.png" : "/whitegdgc.png"}
         alt="GDGC Logo"
         suppressHydrationWarning
         style={{
-          height: "100%",
-          width: "auto",
-          maxWidth: "100%",
+          width: "100%",
+          height: "auto",
+          maxHeight: "80px", // Prevents it from getting bigger than the original size
           cursor: "pointer",
           transition: "filter 0.3s ease",
           filter: isHovered ? "drop-shadow(0 0 12px rgba(255, 212, 39, 0.45))" : "none",
           objectFit: "contain",
-          transform: "none", 
+          objectPosition: "right", // Ensures it stays pinned to the right edge
         }}
       />
     </div>
@@ -54,6 +57,7 @@ const LogoImage = () => {
 const Footer = () => {
   const pathname = usePathname();
 
+  // This ensures the main white Footer hides on pages that use the Yellow EventBlogFooter
   if (pathname && (pathname.startsWith("/Teams") || pathname.startsWith("/Events") || pathname.startsWith("/ContactUs") || pathname.startsWith("/Blogs"))) {
     return null; 
   }
@@ -77,7 +81,7 @@ const Footer = () => {
           <div className="border-2 border-black rounded-[62px] bg-white w-full max-w-[1250px] min-h-[180px] flex items-center justify-between px-4 lg:px-12 py-6 shadow-lg gap-2 lg:gap-4">
             
             {/* Left Section - Social Buttons */}
-            <div className="flex-1 flex flex-col gap-2 lg:gap-3 overflow-hidden pr-2">
+            <div className="flex-1 flex flex-col gap-2 lg:gap-3 pr-2 pt-1">
               
               {/* Row 1: CSS Grid strictly forces 3 columns */}
               <div className="grid grid-cols-3 gap-1 lg:gap-2 w-full">
@@ -95,12 +99,12 @@ const Footer = () => {
             </div>
 
             {/* Center Graphic */}
-            <div className="w-[60px] lg:w-[80px] flex-shrink-0 flex justify-center">
-              <img src="/gdgfooter.png" alt="Vector" className="w-full h-auto object-contain" />
+            <div className="w-[60px] lg:w-[110px] flex-shrink-0 flex justify-center">
+              <img src="/vector26.png" alt="Vector" className="w-full h-auto object-contain" />
             </div>
 
             {/* Right Section - Logo */}
-            <div className="flex-1 flex justify-end">
+            <div className="flex-1 flex justify-end min-w-0">
               <LogoImage />
             </div>
             
@@ -139,9 +143,9 @@ const Footer = () => {
           </div>
           
           <img
-            src="/gdgfooter.png"
+            src="/vector26.png"
             alt="Vector"
-            style={{ width: "60px", height: "auto" }}
+            style={{ width: "80px", height: "auto" }}
           />
           <div style={{ width: "280px", height: "auto" }}>
             <img
