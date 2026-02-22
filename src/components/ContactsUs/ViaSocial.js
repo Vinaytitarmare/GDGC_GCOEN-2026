@@ -10,7 +10,7 @@ const SocialLinks = [
   {
     text: "Whatsapp",
     Icon: "uil-whatsapp",
-    link: "https://chat.whatsapp.com/Ge1u3fw4eOzEOIiUG6z6aJ",
+    link: "https://chat.whatsapp.com/DTW7i4taVZ0GPs8KZgYmGu?mode=gi_t",
   },
   {
     text: "Linkedin",

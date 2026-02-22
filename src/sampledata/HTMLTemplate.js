@@ -134,7 +134,7 @@ export const thankContact = (name) => {
                   Follow us on social media for the latest updates:
                   <div class="social-links">
                       <a href="http://www.youtube.com/@gdscgcoen3822" target="_blank">YouTube</a> | 
-                      <a href="https://chat.whatsapp.com/Ge1u3fw4eOzEOIiUG6z6aJ" target="_blank">WhatsApp</a> | 
+                      <a href="https://chat.whatsapp.com/DTW7i4taVZ0GPs8KZgYmGu?mode=gi_t" target="_blank">WhatsApp</a> | 
                       <a href="https://www.instagram.com/gdgcgcoen" target="_blank">Instagram</a> | 
                       <a href="https://www.linkedin.com/company/gdgoncampus-gcoen/" target="_blank">LinkedIn</a> | 
                       <a href="https://x.com/GDGCGcoen" target="_blank">Twitter</a>
@@ -282,7 +282,7 @@ export const welcomeUser = (name) => {
     Follow us on social media for the latest updates:
     <div class="social-links">
         <a href="http://www.youtube.com/@gdscgcoen3822" target="_blank">Youtube</a> | 
-        <a href="https://chat.whatsapp.com/Ge1u3fw4eOzEOIiUG6z6aJ" target="_blank">Whatsapp</a> | 
+        <a href="https://chat.whatsapp.com/DTW7i4taVZ0GPs8KZgYmGu?mode=gi_t" target="_blank">Whatsapp</a> | 
         <a href="https://www.instagram.com/gdgcgcoen" target="_blank">Instagram</a> | 
         <a href="https://www.linkedin.com/company/gdgoncampus-gcoen/" target="_blank">LinkedIn</a> |
         <a href="https://x.com/GDGCGcoen" target="_blank">Twitter</a>
@@ -318,7 +318,7 @@ export const generateEventThankYouHTML = (
           <p style="font-size: 15px;">
           Join our Whatsapp Group : 
           <br/>
-            <a href="https://chat.whatsapp.com/Gk1Q0DKMFJ0Bq28N8MTagU" target="_blank" style="color: #4CAF50;">https://chat.whatsapp.com/Gk1Q0DKMFJ0Bq28N8MTagU</a>
+            <a href="https://chat.whatsapp.com/DTW7i4taVZ0GPs8KZgYmGu?mode=gi_t" target="_blank" style="color: #4CAF50;">https://chat.whatsapp.com/DTW7i4taVZ0GPs8KZgYmGu?mode=gi_t</a>
           </p>
           <p style="font-size: 16px;">Best regards,</p>
           <p style="font-size: 14px;">
@@ -413,7 +413,7 @@ export const HackOnRegConfirmed = (
                       Follow us on social media for the latest updates and future events:
                       <div>
                           <a href="http://www.youtube.com/@gdscgcoen3822" target="_blank" style='color: #4285F4; text-decoration: none; margin: 0 5px; font-size: 14px;'>YouTube</a> | 
-                          <a href="https://chat.whatsapp.com/Ge1u3fw4eOzEOIiUG6z6aJ" target="_blank" style='color: #4285F4; text-decoration: none; margin: 0 5px; font-size: 14px;'>WhatsApp</a> | 
+                          <a href="https://chat.whatsapp.com/DTW7i4taVZ0GPs8KZgYmGu?mode=gi_t" target="_blank" style='color: #4285F4; text-decoration: none; margin: 0 5px; font-size: 14px;'>WhatsApp</a> | 
                           <a href="https://www.instagram.com/gdgcgcoen" target="_blank" style='color: #4285F4; text-decoration: none; margin: 0 5px; font-size: 14px;'>Instagram</a> | 
                           <a href="https://www.linkedin.com/company/gdgoncampus-gcoen/" target="_blank" style='color: #4285F4; text-decoration: none; margin: 0 5px; font-size: 14px;'>LinkedIn</a> | 
                           <a href="https://x.com/GDGCGcoen" target="_blank" style='color: #4285F4; text-decoration: none; margin: 0 5px; font-size: 14px;'>Twitter</a>
@@ -460,10 +460,10 @@ export const HackOnRegWebHook = (
                                   <br />
                                   <a
                                   style="color:blue;"
-                                      href="https://chat.whatsapp.com/Hd5IZDgZfnX83xETYDD6QR"
+                                      href="https://chat.whatsapp.com/DTW7i4taVZ0GPs8KZgYmGu?mode=gi_t"
                                       target="_blank"
                                   >
-                                      https://chat.whatsapp.com/Hd5IZDgZfnX83xETYDD6QR
+                                      https://chat.whatsapp.com/DTW7i4taVZ0GPs8KZgYmGu?mode=gi_t
                                   </a>
                         </p>
                         <p style="font-size: 16px; color:black;">Thank you for joining us! We look forward to welcoming you to the event.</p>
@@ -476,7 +476,7 @@ export const HackOnRegWebHook = (
                         Follow us on social media for the latest updates and future events:
                         <div>
                             <a href="http://www.youtube.com/@gdscgcoen3822" target="_blank" style='color: #4285F4; text-decoration: none; margin: 0 5px; font-size: 14px;'>YouTube</a> | 
-                            <a href="https://chat.whatsapp.com/Ge1u3fw4eOzEOIiUG6z6aJ" target="_blank" style='color: #4285F4; text-decoration: none; margin: 0 5px; font-size: 14px;'>WhatsApp</a> | 
+                            <a href="https://chat.whatsapp.com/DTW7i4taVZ0GPs8KZgYmGu?mode=gi_t" target="_blank" style='color: #4285F4; text-decoration: none; margin: 0 5px; font-size: 14px;'>WhatsApp</a> | 
                             <a href="https://www.instagram.com/gdgcgcoen" target="_blank" style='color: #4285F4; text-decoration: none; margin: 0 5px; font-size: 14px;'>Instagram</a> | 
                             <a href="https://www.linkedin.com/company/gdgoncampus-gcoen/" target="_blank" style='color: #4285F4; text-decoration: none; margin: 0 5px; font-size: 14px;'>LinkedIn</a> | 
                             <a href="https://x.com/GDGCGcoen" target="_blank" style='color: #4285F4; text-decoration: none; margin: 0 5px; font-size: 14px;'>Twitter</a>

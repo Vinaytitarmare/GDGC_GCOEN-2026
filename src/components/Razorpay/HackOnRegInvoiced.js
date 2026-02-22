@@ -77,10 +77,10 @@ const HackOnRegInvoiced = ({
           <br />
           <a
             style={{ color: "blue" }}
-            href="https://chat.whatsapp.com/Hd5IZDgZfnX83xETYDD6QR"
+            href="https://chat.whatsapp.com/DTW7i4taVZ0GPs8KZgYmGu?mode=gi_t"
             target="_blank"
           >
-            https://chat.whatsapp.com/Hd5IZDgZfnX83xETYDD6QR
+            https://chat.whatsapp.com/DTW7i4taVZ0GPs8KZgYmGu?mode=gi_t
           </a>{" "}
         </p>
         <p className="text-md mt-4">

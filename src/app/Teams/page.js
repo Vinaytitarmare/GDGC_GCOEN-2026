@@ -91,7 +91,7 @@ export default function TeamsPage() {
   <div className="flex flex-col items-center gap-4">
     {[
       { name: "Instagram", icon: <Instagram size={18} />, href: "https://www.instagram.com/gdgcgcoen/" },
-      { name: "Whatsapp", icon: <FaWhatsapp size={18} />, href: "https://chat.whatsapp.com/Ge1u3fw4eOzEOIiUG6z6aJ" },
+      { name: "Whatsapp", icon: <FaWhatsapp size={18} />, href: "https://chat.whatsapp.com/DTW7i4taVZ0GPs8KZgYmGu?mode=gi_t" },
       { name: "LinkedIn", icon: <Linkedin size={18} />, href: "https://www.linkedin.com/company/gdgoncampus-gcoen/" },
       { name: "X.com", icon: <FaXTwitter size={18} />, href: "https://x.com/GDGCGcoen" },
       { name: "Youtube", icon: <Youtube size={18} />, href: "https://www.youtube.com/@gdscgcoen3822" },
