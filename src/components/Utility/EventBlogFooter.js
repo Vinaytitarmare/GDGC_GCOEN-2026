@@ -56,7 +56,7 @@ const LogoImage = () => {
 const EventBlogFooter = () => {
   const socialLinks = [
     { label: "Instagram", icon: "uil-instagram", link: "https://www.instagram.com/gdgcgcoen/" },
-    { label: "Whatsapp", icon: "uil-whatsapp", link: "https://chat.whatsapp.com/Ge1u3fw4eOzEOIiUG6z6aJ" },
+    { label: "Whatsapp", icon: "uil-whatsapp", link: "https://chat.whatsapp.com/DTW7i4taVZ0GPs8KZgYmGu?mode=gi_t" },
     { label: "Linkedin", icon: "uil-linkedin", link: "https://www.linkedin.com/company/gdgoncampus-gcoen/" },
     { label: "X.com", icon: "uil-x", link: "https://x.com/GDGCGcoen" },
     { label: "Youtube", icon: "uil-youtube", link: "https://www.youtube.com/c/gdscgcoen3822" },

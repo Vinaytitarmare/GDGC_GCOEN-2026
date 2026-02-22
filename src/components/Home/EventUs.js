@@ -7,7 +7,7 @@ const EventUs = () => {
 
   return (
     <div className="w-screen min-h-screen overflow-x-hidden bg-white flex flex-col">
-      <div 
+      <div
         className="relative w-full bg-[#ffd427] flex-grow flex flex-col"
         style={{
           backgroundImage: `
@@ -34,12 +34,12 @@ const EventUs = () => {
           {/* OUR EVENTS CARD */}
           <div className="w-full max-w-[1400px] mb-12 md:mb-20">
             <div className="bg-white border-2 md:border-4 border-black rounded-[30px] md:rounded-[50px] overflow-hidden shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] md:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative">
-              
+
               {/* 1. THIN GRAY TOP BAR */}
               <div className="bg-gray-100 py-10 md:py-16 border-b-2 md:border-b-[3px] border-black relative">
-                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                   <div className="w-10 h-10 md:w-14 md:h-14 bg-[#ffd427] rounded-full border-2 md:border-4 border-black"></div>
-                 </div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+                  <div className="w-10 h-10 md:w-14 md:h-14 bg-[#ffd427] rounded-full border-2 md:border-4 border-black"></div>
+                </div>
               </div>
 
               {/* 2. WHITE CONTENT REGION */}
@@ -51,33 +51,35 @@ const EventUs = () => {
                 {/* FIXED GRID LAYOUT */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 md:mb-8">
                   {/* Left Column: 1 large image */}
-                  <div className="h-[250px] md:h-[450px] w-full">
-                    <img 
-                      src="/EventPhoto1.svg" 
-                      alt="Event 1" 
-                      className={`w-full h-full object-cover rounded-2xl border-2 border-black md:border-transparent ${imageHoverStyles}`} 
+                  {/* Unified height: 350px on mobile, 450px on desktop */}
+                  <div className="h-[350px] md:h-[450px] w-full relative">
+                    <img
+                      src="/Event1.png"
+                      alt="Event 1"
+                      className={`absolute inset-0 w-full h-full object-cover rounded-2xl border-2 border-black md:border-transparent ${imageHoverStyles}`}
                     />
                   </div>
-                  
-                  {/* Right Column: 2 smaller images stacked, taking up exactly 50% height each minus the gap */}
-                  <div className="flex flex-col gap-4 h-[400px] md:h-[450px]">
-                    <div className="flex-1 w-full h-1/2">
-                      <img 
-                        src="/EventPhoto2.svg" 
-                        alt="Event 2" 
-                        className={`w-full h-full object-cover rounded-2xl border-2 border-black md:border-transparent ${imageHoverStyles}`} 
+
+                  {/* Right Column: 2 smaller images stacked */}
+                  {/* Exact same height as the left column */}
+                  <div className="flex flex-col gap-4 h-[350px] md:h-[450px] w-full">
+                    <div className="relative w-full" style={{ height: 'calc(50% - 8px)' }}>
+                      <img
+                        src="/Event2.png"
+                        alt="Event 2"
+                        className={`absolute inset-0 w-full h-full object-cover rounded-2xl border-2 border-black md:border-transparent ${imageHoverStyles}`}
                       />
                     </div>
-                    <div className="flex-1 w-full h-1/2">
-                      <img 
-                        src="/EventPhoto3.svg" 
-                        alt="Event 3" 
-                        className={`w-full h-full object-cover rounded-2xl border-2 border-black md:border-transparent ${imageHoverStyles}`} 
+                    <div className="relative w-full" style={{ height: 'calc(50% - 8px)' }}>
+                      <img
+                        src="/Event3.png"
+                        alt="Event 3"
+                        className={`absolute inset-0 w-full h-full object-cover rounded-2xl border-2 border-black md:border-transparent ${imageHoverStyles}`}
                       />
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="flex justify-center scale-90 md:scale-100">
                   <ActionBtn text="Event with us" href="/Events" />
                 </div>
@@ -108,14 +110,14 @@ const EventUs = () => {
 
               {/* White Layer */}
               <div className="relative bg-white -mt-[40px] md:-mt-[86px] pt-8 pb-8 md:pt-16 md:pb-16 rounded-t-[30px] md:rounded-t-[50px] border-t-2 md:border-t-4 border-black z-20 px-6 text-center">
-                 <div className="flex justify-center scale-90 md:scale-100">
-                   <ActionBtn text="Register Now" href="/hackon" />
-                 </div>
+                <div className="flex justify-center scale-90 md:scale-100">
+                  <ActionBtn text="Register Now" href="/hackon" />
+                </div>
               </div>
 
             </div>
           </div>
-          
+
           {/* FOOTER INSIDE YELLOW BACKGROUND */}
           <div className="w-full mb-10 md:mb-16">
             <Footer />

@@ -24,7 +24,7 @@ const JoinCommunity = () => {
         {/* WhatsApp */}
         <CommunityCard
           onClick={() =>
-            router.push("https://chat.whatsapp.com/Ge1u3fw4eOzEOIiUG6z6aJ")
+            router.push("https://chat.whatsapp.com/DTW7i4taVZ0GPs8KZgYmGu?mode=gi_t")
           }
           img1="/Whatsapp_button_1.png"
           img2="/Whatsapp_button_2.svg"

@@ -133,7 +133,7 @@ export default FooterHackON;
 
 const socialLinks = [
   { icon: "/instagram.svg", link: "https://www.instagram.com/gdgcgcoen/", label: "Instagram" },
-  { icon: "/whatsapp.svg", link: "https://chat.whatsapp.com/Ge1u3fw4eOzEOIiUG6z6aJ", label: "Whatsapp" },
+  { icon: "/whatsapp.svg", link: "https://chat.whatsapp.com/DTW7i4taVZ0GPs8KZgYmGu?mode=gi_t", label: "Whatsapp" },
   { icon: "/linkedin.svg", link: "https://www.linkedin.com/company/gdgoncampus-gcoen/", label: "LinkedIn" },
   { icon: "/x.svg", link: "https://x.com/GDGCGcoen", label: "X.com" },
   { icon: "/youtube.svg", link: "http://www.youtube.com/@gdscgcoen3822", label: "YouTube" },

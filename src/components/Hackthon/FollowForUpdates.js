@@ -16,7 +16,7 @@ const FollowForUpdates = () => {
           alt="LinkedIn"
         />
         <SocialCard
-          href="https://chat.whatsapp.com/Ge1u3fw4eOzEOIiUG6z6aJ"
+          href="https://chat.whatsapp.com/DTW7i4taVZ0GPs8KZgYmGu?mode=gi_t"
           src="/logo_whatsapp.svg"
           alt="WhatsApp"
         />

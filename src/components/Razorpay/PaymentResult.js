@@ -22,7 +22,7 @@ export const PaymentSuccess = ({ paymentID }) => {
       </button>
       <button
         onClick={() =>
-          router.push("https://chat.whatsapp.com/Hd5IZDgZfnX83xETYDD6QR")
+          router.push("https://chat.whatsapp.com/DTW7i4taVZ0GPs8KZgYmGu?mode=gi_t")
         }
         className=" rounded-md p-2 mt-6 bg-green-500 hover:bg-green-600 text-white flex items-center justify-center gap-2 w-full"
       >
