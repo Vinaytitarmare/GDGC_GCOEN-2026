@@ -19,7 +19,7 @@ const Navbar = () => {
 
   // List of menu items and their routes
   const menuItems = [
-    { name: "Home", path: "/", width: "md:w-[100px] lg:w-[140px] xl:w-[160px] 2xl:w-[197px]", imgURl: "/homemobile.png", icon: Home },
+    { name: "Home", path: "/", width: "md:w-[100px] lg:w-[140px] xl:w-[160px] 2xl:w-[197px]", imgURl: "/vector69.png", icon: Home },
     { name: "Events", path: "/Events", width: "md:w-[100px] lg:w-[140px] xl:w-[160px] 2xl:w-[197px]", imgURl: "/eventmobile.png", icon: Calendar },
     { name: "Blogs", path: "/Blogs", width: "md:w-[100px] lg:w-[140px] xl:w-[160px] 2xl:w-[197px]", imgURl: "/blogsmobile.png", icon: Rss },
     { name: "Teams", path: "/Teams", width: "md:w-[100px] lg:w-[140px] xl:w-[160px] 2xl:w-[199px]", imgURl: "/teamsmobile.png", icon: Users },
@@ -51,24 +51,51 @@ const Navbar = () => {
     <div className="relative w-full z-50">
       {/* Mobile Menu Header */}
       <div className="top-0 md:hidden relative w-full right-0 flex justify-between items-center p-3 bg-white">
-        <div className="flex items-center gap-2">
-          {/* Replaced dynamic ternary logic with static desktop logo */}
-          <div 
-            className="flex items-center cursor-pointer"
-            onClick={() => router.push("/")}
-          >
+        
+        {/* Reverted to the dynamic image block based on pathname */}
+        <div className="flex items-center gap-3">
+          {pathname == "/" ? (
             <Image
-              src="/vector26.png"
-              alt="GDGC GCOEN Logo"
-              width={40}
-              height={26}
-              className="w-[35px] h-auto"
+              src="/vector69.png"
+              alt="Home"
+              width={197}
+              height={47}
             />
-            <span className={`text-black font-semibold text-lg ml-2 ${poppins400.className}`}>
-              GDGC GCOEN
-            </span>
-          </div>
+          ) : pathname.includes("/Events") ? (
+            <Image
+              src="/eventmobile.png"
+              alt="Events"
+              width={117}
+              height={57}
+            />
+          ) : pathname.includes("/Blogs") ? (
+            <Image
+              src="/blogsmobile.png"
+              alt="Blogs"
+              width={117}
+              height={57}
+            />
+          ) : pathname.includes("/Teams") ? (
+            <Image
+              src="/teamsmobile.png"
+              alt="Teams"
+              width={117}
+              height={57}
+            />
+          ) : pathname.includes("/ContactUs") ? (
+            <Image
+              src="/contactmobile.png"
+              alt="Contact"
+              width={187}
+              height={57}
+            />
+          ) : (
+            <p className="text-black text-sm sm:text-base">
+              {pathname.split("/")[1]?.toUpperCase()}
+            </p>
+          )}
         </div>
+
         <div className="text-lg flex gap-2 items-center ">
           <button
             className="text-black focus:outline-none p-2 hover:bg-gray-100 rounded-lg transition-colors"
@@ -100,6 +127,9 @@ const Navbar = () => {
           <div className="flex flex-col">
             {menuItems.map((item) => {
               const IconComponent = item.icon;
+              // Check if the current page matches the menu item
+              const isActive = item.path === "/" ? pathname === "/" : pathname.startsWith(item.path);
+              const activeBg = isActive ? "bg-[#fffacd]" : "bg-white"; // Light yellow glow for mobile
               
               return (
                 <button
@@ -108,9 +138,9 @@ const Navbar = () => {
                     router.push(item.path);
                     handleMenuClose();
                   }}
-                  className="flex items-center gap-3 w-full bg-white border-2 border-black rounded-xl hover:bg-gray-50 transition-colors mb-1"
+                  className={`flex items-center gap-3 w-full border-2 border-black rounded-xl hover:bg-gray-50 transition-colors mb-1 ${activeBg}`}
                 >
-                  <div className="flex items-center justify-center w-16 h-12 bg-white border-r-2 border-black rounded-lg flex-shrink-0">
+                  <div className={`flex items-center justify-center w-16 h-12 border-r-2 border-black rounded-lg flex-shrink-0 ${activeBg}`}>
                     <IconComponent size={32} className="text-black" />
                   </div>
                   <span className={`text-black font-semibold text-base ${poppins400.className}`}>
@@ -133,7 +163,7 @@ const Navbar = () => {
         >
           
            <button
-            className="flex items-center border-black  py-2 sm:px-[10px] sm:py-[10px] md:w-[170px] md:h-[50px] lg:w-[240px] xl:w-[280px] xl:h-[55px] 2xl:w-[337px] 2xl:h-[65px] transition-colors text-nowrap w-full animate-none"
+            className="flex items-center border-black px-2 py-2 sm:px-[10px] sm:py-[10px] md:w-[170px] md:h-[50px] lg:w-[240px] xl:w-[280px] xl:h-[55px] 2xl:w-[337px] 2xl:h-[65px] transition-colors text-nowrap w-full animate-none"
             style={{ borderWidth: 2, borderRadius: 12, backgroundColor: hoverGDGC ? "#f8d8d8" : "white", marginRight: -1 }}
             onClick={() => {
               router.push("/");
@@ -142,16 +172,20 @@ const Navbar = () => {
             onMouseEnter={() => setHoverGDGC(true)}
             onMouseLeave={() => setHoverGDGC(false)}
           >
-            <Image src="/vector26.png" alt="GDGC triangles" width={45} height={30} className="w-[38px] h-auto md:w-[48px] lg:w-[55px] xl:w-[60px] 2xl:w-[100px]" />
-            <span className={`text-black text-xs sm:text-lg md:text-xs lg:text-lg xl:text-2xl 2xl:text-[29px] leading-tight sm:leading-[30px] xl:leading-[40px] 2xl:leading-[44px]  sm:ml-[15px] xl:ml-[20px] 2xl:ml-[6px] whitespace-nowrap ${poppins400.className}`}>
+            <Image src="/vector26.png" alt="GDGC triangles" width={50} height={28} className="w-[30px] h-auto md:w-[35px] lg:w-[40px] xl:w-[50px] 2xl:w-[80px] h-auto" />
+            <span className={`text-black text-xs sm:text-lg md:text-xs lg:text-lg xl:text-2xl 2xl:text-[29px] leading-tight sm:leading-[30px] xl:leading-[40px] 2xl:leading-[44px] ml-1 sm:ml-[15px] xl:ml-[20px] 2xl:ml-[29px] whitespace-nowrap ${poppins400.className}`}>
               GDGC GCOEN
             </span>
            </button>
 
           {menuItems.map((item) => {
             const isHovered = hoverItem === item.name;
+            // Check if the current page matches the menu item
+            const isActive = item.path === "/" ? pathname === "/" : pathname.startsWith(item.path);
+            
             let bgColor = "white";
-            if (isHovered) bgColor = "#fffacd";
+            // Set background to light yellow if hovered OR active
+            if (isHovered || isActive) bgColor = "#fffacd"; 
             
             return (
               <button

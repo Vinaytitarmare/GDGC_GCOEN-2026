@@ -73,7 +73,8 @@ const EventBlogFooter = () => {
           <div className="border-2 border-black rounded-[62px] bg-[#FFF9DD] w-full max-w-[1250px] min-h-[180px] flex items-center justify-between px-4 lg:px-12 py-6 shadow-lg gap-2 lg:gap-4">
             
             {/* Left Section - Social Buttons */}
-            <div className="flex-1 flex flex-col gap-2 lg:gap-3 overflow-hidden pr-2">
+            {/* FIX: Removed 'overflow-hidden' and added 'pt-1' so hover:-translate-y-1 doesn't cut off */}
+            <div className="flex-1 flex flex-col gap-2 lg:gap-3 pr-2 pt-1">
               
               {/* Row 1: CSS Grid strictly forces 3 columns */}
               <div className="grid grid-cols-3 gap-1 lg:gap-2 w-full">
