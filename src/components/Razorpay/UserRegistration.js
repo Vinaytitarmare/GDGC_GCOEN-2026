@@ -32,7 +32,7 @@ const UserRegistration = ({ onClose }) => {
         <div className="p-4 md:p-8 overflow-y-auto" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', WebkitOverflowScrolling: 'touch' }}>
           <div className="flex flex-col items-center mb-8">
             <Image
-              src="/HackOnLogoBlue.svg"
+              src="/svg/Hackon.png"
               width={200}
               height={50}
               alt="HackOn Logo"

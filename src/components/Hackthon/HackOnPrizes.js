@@ -58,7 +58,8 @@ const HackOnPrizes = () => {
           bg="/Prizes/prize-bg-silver.png"
           title="2nd Prize"
           amount="₹5,000"
-          height="clamp(200px, 50vw, 420px)"
+          // Adjusted: lowered min and vw so it stays smaller than 1st prize
+          height="clamp(240px, 45vw, 420px)" 
           trophyOffset="12px"
           titleColor="text-gray-200"
           amountColor="text-gray-100"
@@ -70,7 +71,8 @@ const HackOnPrizes = () => {
           bg="/Prizes/prize-bg-gold.png"
           title="1st Prize"
           amount="₹10,000"
-          height="clamp(280px, 30vw, 480px)"
+          // Adjusted: Increased vw from 30vw to 55vw so it scales the fastest
+          height="clamp(280px, 55vw, 480px)" 
           trophyOffset="10px"
           titleColor="text-yellow-300"
           amountColor="text-yellow-400"
@@ -82,7 +84,8 @@ const HackOnPrizes = () => {
           bg="/Prizes/prize-bg-bronze.png"
           title="3rd Prize"
           amount="₹3,000"
-          height="clamp(180px, 45vw, 360px)"
+          // Adjusted: lowered min and vw so it is always the smallest
+          height="clamp(200px, 35vw, 360px)" 
           trophyOffset="10px"
           titleColor="text-orange-300"
           amountColor="text-orange-400"
@@ -102,8 +105,3 @@ const HackOnPrizes = () => {
 };
 
 export default HackOnPrizes;
-
-
-
-
-

@@ -8,7 +8,7 @@ export default function TeamsPage() {
   const teams = [
     { name: "GDG Lead", image: "/gdglead.png" },
     { name: "Development Team", image: "/dev.png" },
-    { name: "Operations Team", image: "/op1.png" },
+    { name: "Operations Team", image: "/op1.jpeg" },
     { name: "Design Team", image: "/designfinal.png" },
     { name: "PR & Marketing Team", image: "/mpr.png" },
     { name: "Media Productions Team", image: "/media.png" },
