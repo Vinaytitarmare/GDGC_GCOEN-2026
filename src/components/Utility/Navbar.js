@@ -51,47 +51,23 @@ const Navbar = () => {
     <div className="relative w-full z-50">
       {/* Mobile Menu Header */}
       <div className="top-0 md:hidden relative w-full right-0 flex justify-between items-center p-3 bg-white">
-        <div className="flex items-center gap-3">
-          {pathname == "/" ? (
+        <div className="flex items-center gap-2">
+          {/* Replaced dynamic ternary logic with static desktop logo */}
+          <div 
+            className="flex items-center cursor-pointer"
+            onClick={() => router.push("/")}
+          >
             <Image
-              src="/homemobile.png"
-              alt="Home"
-              width={197}
-              height={47}
+              src="/vector26.png"
+              alt="GDGC GCOEN Logo"
+              width={40}
+              height={26}
+              className="w-[35px] h-auto"
             />
-          ) : pathname.includes("/Events") ? (
-            <Image
-              src="/eventmobile.png"
-              alt="Events"
-              width={117}
-              height={57}
-            />
-          ) : pathname.includes("/Blogs") ? (
-            <Image
-              src="/blogsmobile.png"
-              alt="Blogs"
-              width={117}
-              height={57}
-            />
-          ) : pathname.includes("/Teams") ? (
-            <Image
-              src="/teamsmobile.png"
-              alt="Teams"
-              width={117}
-              height={57}
-            />
-          ) : pathname.includes("/ContactUs") ? (
-            <Image
-              src="/contactmobile.png"
-              alt="Contact"
-              width={187}
-              height={57}
-            />
-          ) : (
-            <p className="text-black text-sm sm:text-base">
-              {pathname.split("/")[1].toUpperCase()}
-            </p>
-          )}
+            <span className={`text-black font-semibold text-lg ml-2 ${poppins400.className}`}>
+              GDGC GCOEN
+            </span>
+          </div>
         </div>
         <div className="text-lg flex gap-2 items-center ">
           <button
@@ -124,7 +100,6 @@ const Navbar = () => {
           <div className="flex flex-col">
             {menuItems.map((item) => {
               const IconComponent = item.icon;
-              const isActive = pathname === item.path || pathname.startsWith(item.path);
               
               return (
                 <button
@@ -133,7 +108,7 @@ const Navbar = () => {
                     router.push(item.path);
                     handleMenuClose();
                   }}
-                  className="flex items-center gap-3 w-full bg-white border-2 border-black rounded-xl hover:bg-gray-50 transition-colors"
+                  className="flex items-center gap-3 w-full bg-white border-2 border-black rounded-xl hover:bg-gray-50 transition-colors mb-1"
                 >
                   <div className="flex items-center justify-center w-16 h-12 bg-white border-r-2 border-black rounded-lg flex-shrink-0">
                     <IconComponent size={32} className="text-black" />
@@ -148,7 +123,7 @@ const Navbar = () => {
         </div>
       )}
 
-      {/* Navbar Container */}
+      {/* Navbar Container (Desktop) */}
       <div
         className={`hidden md:flex z-[9999px] md:relative md:mx-auto md:mt-[44px] md:bg-transparent md:shadow-none md:justify-center md:items-center md:w-fit md:h-[50px] xl:h-[55px] 2xl:h-[65px]`}
       >
@@ -167,7 +142,7 @@ const Navbar = () => {
             onMouseEnter={() => setHoverGDGC(true)}
             onMouseLeave={() => setHoverGDGC(false)}
           >
-            <Image src="/vector26.png" alt="GDGC triangles" width={45} height={30} className="w-[38px] h-auto md:w-[48px] lg:w-[55px] xl:w-[60px] 2xl:w-[100px] h-auto" />
+            <Image src="/vector26.png" alt="GDGC triangles" width={45} height={30} className="w-[38px] h-auto md:w-[48px] lg:w-[55px] xl:w-[60px] 2xl:w-[100px]" />
             <span className={`text-black text-xs sm:text-lg md:text-xs lg:text-lg xl:text-2xl 2xl:text-[29px] leading-tight sm:leading-[30px] xl:leading-[40px] 2xl:leading-[44px]  sm:ml-[15px] xl:ml-[20px] 2xl:ml-[6px] whitespace-nowrap ${poppins400.className}`}>
               GDGC GCOEN
             </span>
@@ -175,7 +150,6 @@ const Navbar = () => {
 
           {menuItems.map((item) => {
             const isHovered = hoverItem === item.name;
-            
             let bgColor = "white";
             if (isHovered) bgColor = "#fffacd";
             
@@ -203,5 +177,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-//done

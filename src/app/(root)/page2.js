@@ -96,7 +96,7 @@ const HomePage = () => {
                   Excited?
                 </h2>
                 <p className="text-lg md:text-xl mt-2 md:mt-4 font-medium text-gray-800">
-                  why wait ! Join Hack On now!
+                  why wait ! Join Hack On 2.0 now!
                 </p>
               </div>
 
