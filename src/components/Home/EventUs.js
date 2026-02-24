@@ -91,7 +91,7 @@ const EventUs = () => {
           <div className="h-10 md:h-20"></div>
 
           {/* FEEDBACK/CTA CARD */}
-          {/* <div className="w-full max-w-[1200px] mb-20 relative px-2 md:px-4 flex justify-center">
+          <div className="w-full max-w-[1200px] mb-20 relative px-2 md:px-4 flex justify-center">
             <div className="relative w-full shadow-[4px_4px_0_0_rgba(0,0,0,1)] md:shadow-[10px_10px_0_0_rgba(0,0,0,1)] rounded-[40px] md:rounded-[60px] overflow-hidden bg-[#e5e5e5] border-2 md:border-4 border-black">
 
               <div className="pt-8 pb-16 md:pt-16 md:pb-32 text-center px-6 relative z-0">
@@ -116,7 +116,7 @@ const EventUs = () => {
               </div>
 
             </div>
-          </div> */}
+          </div>
 
           {/* FOOTER INSIDE YELLOW BACKGROUND */}
           <div className="w-full mb-10 md:mb-16">
