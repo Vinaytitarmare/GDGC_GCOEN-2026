@@ -2,7 +2,6 @@ import { HackOnMembers, HackOnTeams } from "@/config/appwrite";
 import { HackOnRegWebHook } from "@/sampledata/HTMLTemplate";
 import { AddDataToCollection } from "@/Services/Appwrite";
 import { NextResponse } from "next/server";
-import Razorpay from "razorpay";
 import nodemailer from "nodemailer";
 
 export async function POST(req) {
@@ -50,13 +49,7 @@ export async function POST(req) {
       name,
       email,
       HTMLDATA,
-      "Thank you for Register the Event!",
-      [
-        {
-          filename: "RuleBook.pdf",
-          path: "https://cloud.appwrite.io/v1/storage/buckets/6773765e0004f634a5e5/files/67a3b089001be670273c/view?project=677365e100183b7a1198",
-        },
-      ]
+      "Thank you for Register the Event!"
     );
 
     return NextResponse.json(resMail);

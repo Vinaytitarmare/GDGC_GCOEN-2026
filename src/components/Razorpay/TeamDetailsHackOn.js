@@ -288,12 +288,6 @@ const TeamDetailsHackOn = ({ onClose }) => {
           email: submittedLeader.email,
           message: HTMLDATA,
           subject: "Registration Confirmed - HackOn 2.0",
-          attachments: [
-            {
-              filename: "RuleBook.pdf",
-              path: "https://cloud.appwrite.io/v1/storage/buckets/6773765e0004f634a5e5/files/67a3b089001be670273c/view?project=677365e100183b7a1198",
-            },
-          ],
         }),
       });
 

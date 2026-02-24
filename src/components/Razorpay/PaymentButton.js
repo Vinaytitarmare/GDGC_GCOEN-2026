@@ -1,23 +1,23 @@
 "use client";
-import { useEventRegistration } from "@/context/RegistrationPaymentContext";
-import { HackOnRegConfirmed } from "@/sampledata/HTMLTemplate";
-import Script from "next/script";
-import React, { useState, useRef } from "react";
-import toast from "react-hot-toast";
-import { PaymentFailed, PaymentSuccess } from "./PaymentResult";
-import jsPDF from "jspdf";
-import html2canvas from "html2canvas";
-import HackOnRegInvoiced from "./HackOnRegInvoiced";
 import { AddDataToCollection, UpdateCollectionData } from "@/Services/Appwrite";
 import {
-  CoupansCollection,
-  HackOnMembers,
-  HackOnTeams,
+    CoupansCollection,
+    HackOnMembers,
+    HackOnTeams,
 } from "@/config/appwrite";
+import { useEventRegistration } from "@/context/RegistrationPaymentContext";
+import { HackOnRegConfirmed } from "@/sampledata/HTMLTemplate";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import Script from "next/script";
+import { useRef, useState } from "react";
+import toast from "react-hot-toast";
 import { BtnSpinner } from "../Utility/Loaders";
 import CoupansAvail from "./CoupansAvail";
-import Link from "next/link";
+import HackOnRegInvoiced from "./HackOnRegInvoiced";
+import { PaymentFailed, PaymentSuccess } from "./PaymentResult";
 export const TicketType = () => {
   const { Tickets, setUserRegiSteps } = useEventRegistration();
   return (
@@ -174,12 +174,6 @@ export const BillingDetails = () => {
                 email: TeamsDetails.leader.email,
                 message: HTMLDATA,
                 subject: "Thank you for Register the Event!",
-                attachments: [
-                  {
-                    filename: "RuleBook.pdf",
-                    path: "https://cloud.appwrite.io/v1/storage/buckets/6773765e0004f634a5e5/files/67a3b089001be670273c/view?project=677365e100183b7a1198",
-                  },
-                ],
               }),
             });
             if (resMail.ok) {
