@@ -68,7 +68,7 @@ const faqData = {
         question:
           "If we have trouble with registration or team modifications, whom should we contact?",
         answer:
-          "You can contact the event coordinator for assistance. Contact Ayush Nafdey: 9689838637.",
+          "You can contact the event coordinator for assistance. Contact Shreyash Ambhure: 8767607452",
       },
     ],
   },
