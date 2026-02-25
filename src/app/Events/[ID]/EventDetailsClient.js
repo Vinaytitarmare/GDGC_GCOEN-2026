@@ -1,13 +1,13 @@
 "use client";
 
-import { useState } from "react";
-import moment from "moment";
-import SocialShareButtons from "@/components/Utility/SocialShareButtons";
-import DefaultBtnRegister from "@/components/Utility/DefaultBtnRegister";
-import { baseUrl } from "@/config/baseUrl";
-import "suneditor/dist/css/suneditor.min.css";
 import EventRegistration from "@/components/Events/EventRegistration";
-import { Calendar, Cross, CrossIcon, Map, MapPin, Pin, X } from "lucide-react";
+import DefaultBtnRegister from "@/components/Utility/DefaultBtnRegister";
+import SocialShareButtons from "@/components/Utility/SocialShareButtons";
+import { baseUrl } from "@/config/baseUrl";
+import { Calendar, MapPin, X } from "lucide-react";
+import moment from "moment";
+import { useState } from "react";
+import "suneditor/dist/css/suneditor.min.css";
 
 const EventDetailsClient = ({ eventData, EventID }) => {
   const { Title, Description, BannerURL, Artical, StartDate, location } =
@@ -63,15 +63,17 @@ const EventDetailsClient = ({ eventData, EventID }) => {
             <Calendar className="text-blue" /> {moment(StartDate).format("ll")}
           </p>
         </div>
-        <DefaultBtnRegister
-          func={() => setIsModalOpen(true)}
-          cuStyle="w-full mt-5 border border-black bg-blue"
-          name="Register Now"
-        />
+        {eventData?.Event !== "past" && (
+          <DefaultBtnRegister
+            func={() => setIsModalOpen(true)}
+            cuStyle="w-full mt-5 border border-black bg-blue"
+            name="Register Now"
+          />
+        )}
       </div>
 
       {/* Full-Screen Modal */}
-      {isModalOpen && (
+      {eventData?.Event !== "past" && isModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white w-full h-full p-5 md:w-1/2 md:h-auto rounded-md shadow-lg relative">
             <button

@@ -9,12 +9,16 @@ const EventCard = ({
   StartDate,
   location,
   id,
+  Reports,
   type = "upcoming" // Default to upcoming
 }) => {
   const router = useRouter();
   
   // Determine label based on type
   const label = type === "past" ? "Download report" : "Register now";
+
+  // For past events, use report URL for download; for upcoming, go to /hackon
+  const link = type === "past" ? (Reports || "#") : "/hackon";
 
   return (
     <div 
@@ -26,9 +30,10 @@ const EventCard = ({
         title={Title}
         date={StartDate}
         location={location}
-        link={type === "past" ? `/Events/${id}` : "/hackon"}
+        link={link}
         label={label}
         type={type}
+        downloadName={type === "past" ? `${Title}.pdf` : null}
       />
     </div>
   );

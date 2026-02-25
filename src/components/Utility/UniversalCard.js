@@ -9,15 +9,16 @@ const UniversalCard = ({
   location = "GCOEN",
   link = "#", 
   label = "Read more",
-  type = "upcoming" // "upcoming" | "past" | "blog"
+  type = "upcoming", // "upcoming" | "past" | "blog"
+  downloadName = null // If set, clicking will download instead of navigate
 }) => {
-  return (
-    <Link href={link} className="block group h-full">
+
+  const cardContent = (
+    <>
       {/* CONTAINER: Holds the stack */}
       <div className="relative w-full h-full ">
         
         {/* 1. YELLOW BACKGROUND LAYER (The Rim) */}
-        {/* Simplified: Sits behind the white card, offset slightly upwards */}
         <div className="absolute top-0 left-0 w-full h-full bg-[#ffd427] border-2 border-black rounded-[30px] transform -translate-y-2 transition-transform duration-300 group-hover:-translate-y-3 z-0"></div>
 
         {/* 2. MAIN WHITE CARD (The Content) */}
@@ -47,7 +48,7 @@ const UniversalCard = ({
                 <span className={`text-base text-sm md:text-lg font-bold  line-clamp-1 ${rethink_sans800.className}`}>{location}</span>
             </div>
 
-            {/* Title (Row 2) - Optional based on design, but usually needed */}
+            {/* Title (Row 2) */}
             {title && (
                  <p className={`text-md font-bold text-black line-clamp-1 leading-tight ${rethink_sans800.className}`}>
                  {title}
@@ -84,6 +85,21 @@ const UniversalCard = ({
 
         </div>
       </div>
+    </>
+  );
+
+  // If downloadName is set, use an <a> tag for direct download instead of Next.js Link
+  if (downloadName) {
+    return (
+      <a href={link} download={downloadName} className="block group h-full" target="_blank" rel="noopener noreferrer">
+        {cardContent}
+      </a>
+    );
+  }
+
+  return (
+    <Link href={link} className="block group h-full">
+      {cardContent}
     </Link>
   );
 };
