@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 
 const WhyParticipant = () => {
   return (
@@ -29,7 +28,7 @@ const WhyParticipant = () => {
           Title="Skill Up" 
           subtitle="Learn industry-relevant skills via project building" 
           color="bg-blue-500" 
-          customImgClass="p-1 md:p-1.5 scale-110" 
+          customImgClass="p-1 md:p-1.5 scale-110 rounded-[14px] md:rounded-2xl" 
         />
       </div>
     </div>
