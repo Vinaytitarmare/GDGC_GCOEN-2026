@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 const FollowForUpdates = () => {
   return (
@@ -28,11 +27,7 @@ const FollowForUpdates = () => {
           alt="X"
         />
         
-        <SocialCard
-          href="https://discord.gg/SdJmdGaJ"
-          src="/logo_discord.svg"
-          alt="Discord"
-        />
+
       </div>
 
       {/* Floating Decoration */}
