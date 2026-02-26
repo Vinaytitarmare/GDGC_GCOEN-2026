@@ -23,6 +23,7 @@ const Hackon = () => {
       <WhyParticipant />
       <JoinCommunity />
       <FollowForUpdates />
+      <HackOnPrizes/>
       
       {/* <HackOnPartners /> */}
       <FAQ />
