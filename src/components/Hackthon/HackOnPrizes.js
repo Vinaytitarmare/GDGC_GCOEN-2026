@@ -1,103 +1,87 @@
-import Image from "next/image";
 import React from "react";
-
-const PrizeCard = ({ trophy, bg, title, amount, height, trophyOffset, titleColor, amountColor }) => {
-  return (
-    <div className="relative flex flex-col items-center">
-      {/* Trophy */}
-      <div className="absolute z-20" style={{ top: trophyOffset }}>
-        <Image
-          src={trophy}
-          alt="trophy"
-          width={64}
-          height={64}
-          className="w-10 md:w-12"
-          priority
-        />
-      </div>
-
-      {/* Card */}
-      <div
-        className="relative 
-          w-[110px] sm:w-[150px] md:w-[240px] lg:w-[260px]
-          rounded-[28px] overflow-hidden
-          shadow-[0_20px_60px_rgba(0,0,0,0.35)]
-          flex flex-col justify-end
-        "
-        style={{ height }}
-      >
-        <Image src={bg} alt="prize bg" fill className="object-cover" />
-
-        {/* Content */}
-        <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 text-center">
-          <p className={`text-base sm:text-lg md:text-2xl font-semibold ${titleColor}`}>
-            {title}
-          </p>
-          <p className={`text-2xl sm:text-3xl md:text-4xl font-bold mt-1 ${amountColor}`}>
-            {amount}
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
+import Link from "next/link";
 
 const HackOnPrizes = () => {
   return (
-    <section className="w-full relative py-10 md:py-16 bg-black">
-      <h3 className="text-white text-3xl md:text-5xl text-center font-medium mb-12">
-        Prizes
-      </h3>
+    <section className="w-full relative py-16 px-4 bg-black overflow-hidden flex justify-center shrink-0 min-h-fit h-auto">
+      
+      {/* Background Glow Effect */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl h-64 bg-yellow-500/10 blur-[100px] pointer-events-none rounded-full" />
 
-      <div className="mx-auto w-full flex items-end justify-center gap-3 sm:gap-4 md:gap-10 px-2">
+      <div className="w-full max-w-5xl flex flex-col gap-12 md:gap-16 relative z-10">
         
-        {/* 2nd Prize */}
-        <PrizeCard
-          trophy="/Prizes/trophy-2nd.png"
-          bg="/Prizes/prize-bg-silver.png"
-          title="2nd Prize"
-          amount="₹5,000"
-          height="clamp(240px, 45vw, 420px)" 
-          trophyOffset="12px"
-          titleColor="text-gray-200"
-          amountColor="text-gray-100"
-        />
+        {/* TOP SECTION: Prize Box & Rounds Info */}
+        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+          
+          {/* LEFT: Prize Pool Box */}
+          <div className="border border-[#F9AB00] rounded-[32px] p-8 md:p-10 flex flex-col items-center justify-center bg-black min-w-[280px] shadow-[0_0_40px_rgba(249,171,0,0.15)] transition-all duration-500 hover:scale-105 hover:shadow-[0_0_60px_rgba(249,171,0,0.6)] cursor-default">
+            <h4 className="text-white text-3xl font-bold tracking-wide">
+              Prize Pool
+            </h4>
+            <h2 
+              className="text-[#F9AB00] text-7xl md:text-8xl font-black mt-1 transition-all duration-500"
+              style={{ textShadow: "4px 4px 0px rgba(255,255,255,0.15)" }} 
+            >
+              20K
+            </h2>
+          </div>
 
-        {/* 1st Prize */}
-        <PrizeCard
-          trophy="/Prizes/trophy-1st.png"
-          bg="/Prizes/prize-bg-gold.png"
-          title="1st Prize"
-          amount="₹10,000"
-          height="clamp(280px, 55vw, 480px)" 
-          trophyOffset="10px"
-          titleColor="text-yellow-300"
-          amountColor="text-yellow-400"
-        />
+          {/* RIGHT: HackOn Rounds Info */}
+          <div className="flex flex-col text-center md:text-left text-white max-w-lg">
+            <h3 className="text-[#F9AB00] text-2xl md:text-3xl font-medium mb-4">
+              HackOn Rounds
+            </h3>
+            
+            <div className="space-y-2 text-base md:text-lg mb-6">
+              <p>
+                <span className="font-bold">Round 1:</span> Online PPT Submission
+              </p>
+              <p>
+                <span className="font-bold">Round 2:</span> 8-Hour Offline Hackathon
+              </p>
+              <p className="font-bold text-gray-300">
+                (Selected Teams Only)
+              </p>
+            </div>
 
-        {/* 3rd Prize */}
-        <PrizeCard
-          trophy="/Prizes/trophy-3rd.png"
-          bg="/Prizes/prize-bg-bronze.png"
-          title="3rd Prize"
-          amount="₹3,000"
-          height="clamp(200px, 35vw, 360px)" 
-          trophyOffset="10px"
-          titleColor="text-orange-300"
-          amountColor="text-orange-400"
-        />
+            <div className="text-gray-400 text-sm md:text-base leading-relaxed border-t border-white/10 pt-4">
+              Certificates | Mentorship & Networking | Goodies | Refreshments
+            </div>
+          </div>
+
+        </div>
+
+        {/* BOTTOM SECTION: Event Coordinators */}
+       {/* BOTTOM SECTION: Event Coordinators */}
+        <div className="flex flex-col items-center w-full mt-4 md:mt-8">
+          {/* FIX: Scaled down text/tracking on mobile and added whitespace-nowrap */}
+          <h3 className="text-gray-300 text-base sm:text-lg md:text-xl font-medium mb-8 uppercase tracking-wide md:tracking-widest text-center whitespace-nowrap">
+            Event Coordinators
+          </h3>
+          
+          <div className="flex flex-row justify-center gap-3 sm:gap-12 w-full px-2">
+            
+            {/* EC 1 */}
+            {/* FIX 3: Added w-[48%] so it takes up almost half the phone screen, and text-sm so names fit */}
+            <div className="flex flex-col items-center text-center bg-white/5 border border-white/10 px-2 py-4 sm:px-5 rounded-xl w-[48%] max-w-[200px] transition-colors hover:bg-white/10">
+              <p className="text-white font-semibold text-sm sm:text-base leading-tight mb-1">Shreyash Ambhure</p>
+              <Link href="tel:+918767607452" className="text-[#F9AB00] hover:underline text-xs sm:text-sm">
+                +91 8767607452
+              </Link>
+            </div>
+
+            {/* EC 2 */}
+            <div className="flex flex-col items-center text-center bg-white/5 border border-white/10 px-2 py-4 sm:px-5 rounded-xl w-[48%] max-w-[200px] transition-colors hover:bg-white/10">
+              <p className="text-white font-semibold text-sm sm:text-base leading-tight mb-1">Kartik Bissa</p>
+              <Link href="tel:+918329284863" className="text-[#F9AB00] hover:underline text-xs sm:text-sm">
+                +91 8329284863
+              </Link>
+            </div>
+
+          </div>
+        </div>
+
       </div>
-
-      {/* Decorative pin */}
-      <Image
-        src="/Pin.svg"
-        alt="pin"
-        width={160}
-        height={160}
-        // FIX: Replaced rigid breakpoints with fluid clamp() sizing and h-auto to keep proportions
-        className="absolute left-0 -bottom-4 md:-bottom-8 w-[clamp(80px,15vw,192px)] h-auto z-20 pointer-events-none"
-      />
     </section>
   );
 };
