@@ -1,11 +1,11 @@
 "use client";
 import { AddDataToCollection, GetSingleDocument } from "@/Services/Appwrite";
 import {
-    AppwriteDatabase,
-    GDGCDatabase,
-    ID,
-    UserAccount,
-    UsersCollection,
+  AppwriteDatabase,
+  GDGCDatabase,
+  ID,
+  UserAccount,
+  UsersCollection,
 } from "@/config/appwrite";
 import { welcomeUser } from "@/sampledata/HTMLTemplate";
 import { useRouter } from "next/navigation";
@@ -16,7 +16,7 @@ const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
   // Modal State
   const [authModalOpen, setauthModalOpen] = useState(false);
-const [isRatingOpen, setisRatingOpen] = useState(false)
+  const [isRatingOpen, setisRatingOpen] = useState(false)
 
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState(null);
@@ -85,6 +85,16 @@ const [isRatingOpen, setisRatingOpen] = useState(false)
           email: email,
           message: htmlTemp,
           subject: `Welcome to GDG on Campus, ${name}! 🎉`,
+          attachments: [
+            {
+              filename: "Hackon Rulebook.pdf",
+              path: `${window.location.origin}/Hackon Rulebook.pdf`,
+            },
+            {
+              filename: "HACKON2.0_PPT_TEMPLATE.pptx",
+              path: `${window.location.origin}/HACKON2.0_PPT_TEMPLATE.pptx`,
+            },
+          ],
         }),
       });
       await loginUser(email, password);

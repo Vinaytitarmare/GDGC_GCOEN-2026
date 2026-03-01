@@ -1,9 +1,9 @@
 "use client";
 import { AddDataToCollection, UpdateCollectionData } from "@/Services/Appwrite";
 import {
-    CoupansCollection,
-    HackOnMembers,
-    HackOnTeams,
+  CoupansCollection,
+  HackOnMembers,
+  HackOnTeams,
 } from "@/config/appwrite";
 import { useEventRegistration } from "@/context/RegistrationPaymentContext";
 import { HackOnRegConfirmed } from "@/sampledata/HTMLTemplate";
@@ -174,6 +174,16 @@ export const BillingDetails = () => {
                 email: TeamsDetails.leader.email,
                 message: HTMLDATA,
                 subject: "Thank you for Register the Event!",
+                attachments: [
+                  {
+                    filename: "Hackon Rulebook.pdf",
+                    path: `${window.location.origin}/Hackon Rulebook.pdf`,
+                  },
+                  {
+                    filename: "HACKON2.0_PPT_TEMPLATE.pptx",
+                    path: `${window.location.origin}/HACKON2.0_PPT_TEMPLATE.pptx`,
+                  },
+                ],
               }),
             });
             if (resMail.ok) {
