@@ -299,6 +299,16 @@ const TeamDetailsHackOn = ({ onClose }) => {
           email: submittedLeader.email,
           message: HTMLDATA,
           subject: "Registration Confirmed - HackOn 2.0",
+          attachments: [
+            {
+              filename: "Hackon Rulebook.pdf",
+              path: `${window.location.origin}/Hackon Rulebook.pdf`,
+            },
+            {
+              filename: "HACKON2.0_PPT_TEMPLATE.pptx",
+              path: `${window.location.origin}/HACKON2.0_PPT_TEMPLATE.pptx`,
+            },
+          ],
         }),
       });
 
