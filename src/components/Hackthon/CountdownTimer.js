@@ -77,32 +77,95 @@ const HackOnCountdown = ({ startTime = "9:00", endTime = "17:00" }) => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen bg-Dark overflow-hidden">
-      {/* Rainbow Strip */}
-      <div className="fixed top-[-50px] left-[-150px] sm:top-[-230px] sm:left-[-230px] md:top-[-440px] md:left-[-200px] z-0 rotate-[-385deg]">
-        <img src="/Rectangle.svg" alt="Background Strip" />
-      </div>
+    <div className="relative w-full h-screen bg-black overflow-hidden">
 
-      {/* Logo */}
-      <div className="fixed top-2 size-40 sm:size-56 z-10">
-        <img src="/gdgc_logo.svg" alt="GDGC Logo" />
-      </div>
-
-      {/* Hack On Title */}
-      <div className="absolute top-4 right-3 sm:right-10 size-20 sm:size-40 z-10">
-        <img src="/Vector.svg" alt="Hack On Title" />
-      </div>
-
-      {/* Globe */}
-      <div className="absolute top-[530px] size-16 z-10">
-        <img src="/Group 9.svg" alt="Globe" />
-      </div>
-
+{/* Hack On Title */}
+<div className="absolute top-15 left-1/2 -translate-x-1/2 z-20 w-[300px] sm:w-[450px] md:w-[650px]">
+  <Image
+    src="/svg/Hackon.png"
+    alt="HackOn 2.0"
+    width={800}
+    height={400}
+    className="w-full h-auto"
+    priority
+  />
+</div>
       {/* Countdown Timer */}
-      <div className="flex relative z-20 flex-col items-center justify-center h-full px-4 left-1/2 transform -translate-x-1/2">
-        <div className="text-white text-[100px] sm:text-[150px] md:text-[200px] font-bold leading-none">
-          {formattedTime}
-        </div>
+<div className="flex relative z-20 flex-col items-center justify-center h-full px-2 pt-20">
+
+<div className="absolute inset-0 pointer-events-none"
+  style={{
+    backgroundImage: `
+      repeating-linear-gradient(
+        to right,
+        rgba(255,255,255,0.12) 0px,
+        rgba(255,255,255,0.12) 2px,
+        transparent 2px,
+        transparent 40px
+      ),
+      repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.12) 0px,
+        rgba(255,255,255,0.12) 2px,
+        transparent 2px,
+        transparent 40px
+      )
+    `
+  }}
+/>
+  
+
+  <div className="relative flex flex-col items-center justify-center h-full px-4 pt-20">
+
+  {/* GRID BACKGROUND */}
+  <div
+    style={{
+      backgroundImage: `
+        repeating-linear-gradient(
+          to right,
+          rgba(255,255,255,0.12) 0px,
+          rgba(255,255,255,0.12) 2px,
+          transparent 2px,
+          transparent 40px
+        ),
+        repeating-linear-gradient(
+          to bottom,
+          rgba(255,255,255,0.12) 0px,
+          rgba(255,255,255,0.12) 2px,
+          transparent 2px,
+          transparent 40px
+        )
+      `
+    }}
+  />
+
+  {/* YELLOW STRIP */}
+  <div
+    className="absolute w-[200%] h-[35px] rotate-[8deg] rounded-md z-10"
+    style={{
+      background: "linear-gradient(90deg, #facc15, #eab308, #facc15)",
+      opacity: 0.25
+    }}
+  ></div>
+
+  {/* TIMER BOX */}
+  <div className="relative z-20 border-4 border-yellow-500 rounded-3xl px-12 py-6 bg-black">
+    <div
+      className="text-[90px] sm:text-[140px] md:text-[180px] font-extrabold leading-none text-transparent"
+      style={{ WebkitTextStroke: "3px white" }}
+    >
+      {formattedTime}
+    </div>
+  </div>
+</div>
+  {clockDetail?.Description && (
+    <div className="mt-8">
+      <div className="bg-purple-600 text-white text-lg sm:text-xl md:text-2xl font-semibold py-3 px-8 rounded-full">
+        {clockDetail.Description}
+      </div>
+    </div>
+  )}
+</div>
         {clockDetail?.Description && (
           <div className="mt-6 sm:mt-8">
             <div className="bg-purple-600 text-white text-lg sm:text-xl md:text-2xl font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-full">
@@ -111,15 +174,7 @@ const HackOnCountdown = ({ startTime = "9:00", endTime = "17:00" }) => {
           </div>
         )}
 
-        <Image
-          src="/Sponsore.svg"
-          width={100}
-          height={100}
-          className="absolute px-20 md:mb-5 mb-20 bottom-0 md:w-[50%] w-full"
-          alt="sponsors"
-        />
       </div>
-    </div>
   );
 };
 
