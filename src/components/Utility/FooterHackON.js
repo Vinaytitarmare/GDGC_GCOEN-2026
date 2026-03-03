@@ -18,51 +18,35 @@ const FooterHackON = () => {
           <UserRegistration onClose={() => setShowRegistration(false)} />
         )}
 
-        {/* Register Box from Figma (Box + Hoverable Button) */}
-<button
-  onClick={() => setShowRegistration(true)}
-  className="relative w-full max-w-xl bg-transparent border-none p-0 cursor-pointer"
->
-  {/* Outer Box */}
-  <Image
-    src="/register-box.svg"
-    alt="Register Box"
-    width={800}
-    height={300}
-    className="w-full h-auto"
-  />
+        {/* Registration Closed Box */}
+        <div className="relative w-full max-w-xl bg-transparent border-none p-0">
+          {/* Outer Box */}
+          <Image
+            src="/register-box.svg"
+            alt="Register Box"
+            width={800}
+            height={300}
+            className="w-full h-auto"
+          />
 
-  {/* Button Wrapper (handles hover) */}
-  <div
-    className="
-      absolute 
-      bottom-[14%] 
-      left-1/2 
-      -translate-x-1/2 
-      w-[160px] sm:w-[190px] md:w-[220px]
-      cursor-pointer
-      group
-    "
-  >
-    {/* Normal Button */}
-    <Image
-      src="/register-btn.svg"
-      alt="Register Now"
-      width={240}
-      height={80}
-      className="w-full transition-all duration-200 group-hover:hidden"
-    />
-
-    {/* Hover Button */}
-    <Image
-      src="/register-btn-hover.svg"
-      alt="Register Now Hover"
-      width={240}
-      height={80}
-      className="w-full hidden transition-all duration-200 group-hover:block"
-    />
-  </div>
-</button>
+          {/* Registration Closed Text */}
+          <div
+            className="
+              absolute 
+              bottom-[8%] sm:bottom-[10%] md:bottom-[14%]
+              left-1/2 
+              -translate-x-1/2 
+              w-full
+              flex
+              justify-center
+              items-center
+            "
+          >
+            <span className="text-white text-base sm:text-xl md:text-2xl font-bold bg-black/50 px-4 py-1.5 sm:px-6 sm:py-2 rounded-full border border-white/30 backdrop-blur-sm">
+              Registration Closed
+            </span>
+          </div>
+        </div>
 
 
 

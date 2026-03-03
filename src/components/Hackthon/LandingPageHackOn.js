@@ -52,33 +52,15 @@ const LandingPageHackOn = () => {
           />
         </div>
 
-        {/* Register Now Button */}
+        {/* Registration Closed Button */}
         <div className="flex justify-center py-6 md:py-10 px-4 md:px-5">
-          <button
-            onClick={() => setShowRegistration(true)}
-            className="inline-flex items-center gap-3 md:gap-4 px-8 md:px-12 py-3 md:py-4 bg-white text-black border-[2px] md:border-[3px] border-transparent rounded-full 
+          <div
+            className="inline-flex items-center gap-3 md:gap-4 px-8 md:px-12 py-3 md:py-4 bg-gray-400 text-black border-[2px] md:border-[3px] border-transparent rounded-full 
                        font-bold text-base md:text-lg lg:text-xl transition-all duration-300 
-                       hover:text-[#FFD700] hover:border-[#FFD700] hover:-translate-y-0.5 hover:shadow-[0_4px_15px_rgba(255,215,0,0.3)]
-                       group cursor-pointer"
+                       cursor-default"
           >
-            <span>Register Now</span>
-            
-            {/* Arrow Icon */}
-            <svg 
-              className="w-6 h-6 md:w-8 md:h-8 self-center transition-all duration-300" 
-              viewBox="0 0 24 24" 
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path 
-                d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z" 
-                fill="black" 
-                stroke="black" 
-                strokeWidth="2.5"
-                className="group-hover:fill-[#FFD700] group-hover:stroke-[#FFD700] transition-all duration-300"
-              />
-            </svg>
-          </button>
+            <span>Registration Closed</span>
+          </div>
         </div>
 
         {/* Main Date & Location Card */}
