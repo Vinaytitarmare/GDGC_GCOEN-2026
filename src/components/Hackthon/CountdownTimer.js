@@ -106,7 +106,7 @@ return (
 <div className="relative z-20 flex flex-col items-center justify-center min-h-screen gap-4 sm:gap-16">
 
   {/* Title */}
-  <div className="w-[220px] sm:w-[400px] md:w-[600px]">
+  <div className="w-[300px] sm:w-[380px] md:w-[600px]">
     <Image
       src="/svg/Hackon.png"
       alt="HackOn 2.0"
@@ -118,7 +118,7 @@ return (
   </div>
 
   {/* Timer Section */}
-  <div className="relative flex items-center justify-center">
+  <div className="relative w-ful flex items-center justify-center">
 
         {/* Yellow Strip */}
         <div
@@ -132,7 +132,7 @@ return (
         {/* Timer Box */}
         <div className="relative z-20 border-2 sm:border-4 border-yellow-500 rounded-2xl sm:rounded-3xl px-6 sm:px-12 py-4 sm:py-6 bg-black">
           <div
-            className="text-[48px] sm:text-[100px] md:text-[160px] font-extrabold leading-none text-transparent"
+            className="text-[70px] sm:text-[800px] md:text-[160px] font-extrabold leading-none text-transparent"
             style={{ WebkitTextStroke: "2px white" }}
           >
             {formattedTime}
