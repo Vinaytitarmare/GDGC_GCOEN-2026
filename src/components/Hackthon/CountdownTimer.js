@@ -86,15 +86,15 @@ return (
         backgroundImage: `
           repeating-linear-gradient(
             to right,
-            rgba(255,255,255,0.05) 0px,
-            rgba(255,255,255,0.05) 1px,
+            rgba(255,255,255,0.06) 0px,
+            rgba(255,255,255,0.06) 1px,
             transparent 1px,
             transparent 40px
           ),
           repeating-linear-gradient(
             to bottom,
-            rgba(255,255,255,0.05) 0px,
-            rgba(255,255,255,0.05) 1px,
+            rgba(255,255,255,0.06) 0px,
+            rgba(255,255,255,0.06) 1px,
             transparent 1px,
             transparent 40px
           )
@@ -118,7 +118,7 @@ return (
   </div>
 
   {/* Timer Section */}
-  <div className="relative w-ful flex items-center justify-center">
+  <div className="relative w-full flex items-center justify-center">
 
         {/* Yellow Strip */}
         <div
@@ -132,7 +132,7 @@ return (
         {/* Timer Box */}
         <div className="relative z-20 border-2 sm:border-4 border-yellow-500 rounded-2xl sm:rounded-3xl px-6 sm:px-12 py-4 sm:py-6 bg-black">
           <div
-            className="text-[70px] sm:text-[800px] md:text-[160px] font-extrabold leading-none text-transparent"
+            className="text-[70px] sm:text-[80px] md:text-[160px] font-extrabold leading-none text-transparent"
             style={{ WebkitTextStroke: "2px white" }}
           >
             {formattedTime}
