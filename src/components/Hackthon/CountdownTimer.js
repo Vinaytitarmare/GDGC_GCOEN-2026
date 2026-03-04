@@ -103,22 +103,22 @@ return (
     />
 
     {/* Main Content */}
-    <div className="relative z-20 flex flex-col items-center pt-14 sm:pt-20 gap-4 sm:gap-16">
+<div className="relative z-20 flex flex-col items-center justify-center min-h-screen gap-4 sm:gap-16">
 
-      {/* Title */}
-      <div className="w-[220px] sm:w-[400px] md:w-[600px]">
-        <Image
-          src="/svg/Hackon.png"
-          alt="HackOn 2.0"
-          width={800}
-          height={400}
-          className="w-full h-auto"
-          priority
-        />
-      </div>
+  {/* Title */}
+  <div className="w-[220px] sm:w-[400px] md:w-[600px]">
+    <Image
+      src="/svg/Hackon.png"
+      alt="HackOn 2.0"
+      width={800}
+      height={400}
+      className="w-full h-auto"
+      priority
+    />
+  </div>
 
-      {/* Timer Section */}
-      <div className="relative flex items-center justify-center">
+  {/* Timer Section */}
+  <div className="relative flex items-center justify-center">
 
         {/* Yellow Strip */}
         <div
