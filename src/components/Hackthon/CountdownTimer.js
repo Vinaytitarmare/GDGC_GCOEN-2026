@@ -76,106 +76,83 @@ const HackOnCountdown = ({ startTime = "9:00", endTime = "17:00" }) => {
     };
   }, []);
 
-  return (
-    <div className="relative w-full h-screen bg-black overflow-hidden">
+return (
+  <div className="relative w-full min-h-screen bg-black overflow-hidden">
 
-{/* Hack On Title */}
-<div className="absolute top-15 left-1/2 -translate-x-1/2 z-20 w-[300px] sm:w-[450px] md:w-[650px]">
-  <Image
-    src="/svg/Hackon.png"
-    alt="HackOn 2.0"
-    width={800}
-    height={400}
-    className="w-full h-auto"
-    priority
-  />
-</div>
-      {/* Countdown Timer */}
-<div className="flex relative z-20 flex-col items-center justify-center h-full px-2 pt-20">
-
-<div className="absolute inset-0 pointer-events-none"
-  style={{
-    backgroundImage: `
-      repeating-linear-gradient(
-        to right,
-        rgba(255,255,255,0.12) 0px,
-        rgba(255,255,255,0.12) 2px,
-        transparent 2px,
-        transparent 40px
-      ),
-      repeating-linear-gradient(
-        to bottom,
-        rgba(255,255,255,0.12) 0px,
-        rgba(255,255,255,0.12) 2px,
-        transparent 2px,
-        transparent 40px
-      )
-    `
-  }}
-/>
-  
-
-  <div className="relative flex flex-col items-center justify-center h-full px-4 pt-20">
-
-  {/* GRID BACKGROUND */}
-  <div
-    style={{
-      backgroundImage: `
-        repeating-linear-gradient(
-          to right,
-          rgba(255,255,255,0.12) 0px,
-          rgba(255,255,255,0.12) 2px,
-          transparent 2px,
-          transparent 40px
-        ),
-        repeating-linear-gradient(
-          to bottom,
-          rgba(255,255,255,0.12) 0px,
-          rgba(255,255,255,0.12) 2px,
-          transparent 2px,
-          transparent 40px
-        )
-      `
-    }}
-  />
-
-  {/* YELLOW STRIP */}
-  <div
-    className="absolute w-[200%] h-[35px] rotate-[8deg] rounded-md z-10"
-    style={{
-      background: "linear-gradient(90deg, #facc15, #eab308, #facc15)",
-      opacity: 0.25
-    }}
-  ></div>
-
-  {/* TIMER BOX */}
-  <div className="relative z-20 border-4 border-yellow-500 rounded-3xl px-12 py-6 bg-black">
+    {/* Grid Background */}
     <div
-      className="text-[90px] sm:text-[140px] md:text-[180px] font-extrabold leading-none text-transparent"
-      style={{ WebkitTextStroke: "3px white" }}
-    >
-      {formattedTime}
+      className="absolute inset-0 pointer-events-none z-0"
+      style={{
+        backgroundImage: `
+          repeating-linear-gradient(
+            to right,
+            rgba(255,255,255,0.05) 0px,
+            rgba(255,255,255,0.05) 1px,
+            transparent 1px,
+            transparent 40px
+          ),
+          repeating-linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.05) 0px,
+            rgba(255,255,255,0.05) 1px,
+            transparent 1px,
+            transparent 40px
+          )
+        `
+      }}
+    />
+
+    {/* Main Content */}
+    <div className="relative z-20 flex flex-col items-center pt-14 sm:pt-20 gap-4 sm:gap-16">
+
+      {/* Title */}
+      <div className="w-[220px] sm:w-[400px] md:w-[600px]">
+        <Image
+          src="/svg/Hackon.png"
+          alt="HackOn 2.0"
+          width={800}
+          height={400}
+          className="w-full h-auto"
+          priority
+        />
+      </div>
+
+      {/* Timer Section */}
+      <div className="relative flex items-center justify-center">
+
+        {/* Yellow Strip */}
+        <div
+          className="absolute w-[250%] h-[20px] sm:h-[30px] rotate-[5deg] z-10"
+          style={{
+            background: "linear-gradient(90deg, #facc15, #eab308, #facc15)",
+            opacity: 0.25
+          }}
+        />
+
+        {/* Timer Box */}
+        <div className="relative z-20 border-2 sm:border-4 border-yellow-500 rounded-2xl sm:rounded-3xl px-6 sm:px-12 py-4 sm:py-6 bg-black">
+          <div
+            className="text-[48px] sm:text-[100px] md:text-[160px] font-extrabold leading-none text-transparent"
+            style={{ WebkitTextStroke: "2px white" }}
+          >
+            {formattedTime}
+          </div>
+        </div>
+
+      </div>
+
+      {/* Description */}
+      {clockDetail?.Description && (
+        <div className="mt-6 sm:mt-8 px-4 text-center">
+          <div className="bg-purple-600 text-white text-sm sm:text-xl md:text-2xl font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-full">
+            {clockDetail.Description}
+          </div>
+        </div>
+      )}
+
     </div>
   </div>
-</div>
-  {clockDetail?.Description && (
-    <div className="mt-8">
-      <div className="bg-purple-600 text-white text-lg sm:text-xl md:text-2xl font-semibold py-3 px-8 rounded-full">
-        {clockDetail.Description}
-      </div>
-    </div>
-  )}
-</div>
-        {clockDetail?.Description && (
-          <div className="mt-6 sm:mt-8">
-            <div className="bg-purple-600 text-white text-lg sm:text-xl md:text-2xl font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-full">
-              {clockDetail.Description}
-            </div>
-          </div>
-        )}
-
-      </div>
-  );
+);
 };
 
 export default HackOnCountdown;
