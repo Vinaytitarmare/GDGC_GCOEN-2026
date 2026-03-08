@@ -86,15 +86,15 @@ return (
         backgroundImage: `
           repeating-linear-gradient(
             to right,
-            rgba(255,255,255,0.06) 0px,
-            rgba(255,255,255,0.06) 1px,
+            rgba(255,255,255,0.07) 0px,
+            rgba(255,255,255,0.07) 1px,
             transparent 1px,
             transparent 40px
           ),
           repeating-linear-gradient(
             to bottom,
-            rgba(255,255,255,0.06) 0px,
-            rgba(255,255,255,0.06) 1px,
+            rgba(255,255,255,0.07) 0px,
+            rgba(255,255,255,0.07) 1px,
             transparent 1px,
             transparent 40px
           )
@@ -140,6 +140,16 @@ return (
         </div>
 
       </div>
+<div className="w-screen">
+  <Image
+    src="/svg/FooterTitle.png"
+    alt="HackOn 2.0"
+    width={1920}
+    height={140}
+    className="w-full h-[80px] sm:h-[100px] md:h-[120px] object-contain"
+    priority
+  />
+</div>
 
       {/* Description */}
       {clockDetail?.Description && (
