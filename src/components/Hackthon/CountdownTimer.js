@@ -35,22 +35,25 @@ const HackOnCountdown = ({ startTime = "09:00", endTime = "17:00" }) => {
       const start = getTimeToday(startTime);
       const end = getTimeToday(endTime);
 
+      let timeDiff = 0;
       if (now < start) {
-        setFormattedTime("00:00:00");
+        timeDiff = end - start;
       } else if (now < end) {
-        const secondsRemaining = Math.floor((end - now) / 1000);
-        const hours = String(Math.floor(secondsRemaining / 3600)).padStart(
-          2,
-          "0"
-        );
-        const minutes = String(
-          Math.floor((secondsRemaining % 3600) / 60)
-        ).padStart(2, "0");
-        const seconds = String(secondsRemaining % 60).padStart(2, "0");
-        setFormattedTime(`${hours}:${minutes}:${seconds}`);
+        timeDiff = end - now;
       } else {
-        setFormattedTime("00:00:00");
+        timeDiff = 0;
       }
+
+      const secondsRemaining = Math.floor(timeDiff / 1000);
+      const hours = String(Math.floor(secondsRemaining / 3600)).padStart(
+        2,
+        "0"
+      );
+      const minutes = String(
+        Math.floor((secondsRemaining % 3600) / 60)
+      ).padStart(2, "0");
+      const seconds = String(secondsRemaining % 60).padStart(2, "0");
+      setFormattedTime(`${hours}:${minutes}:${seconds}`);
     }, 1000);
 
     // Realtime data update
