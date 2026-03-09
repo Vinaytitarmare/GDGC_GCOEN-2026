@@ -142,7 +142,7 @@ return (
       </div>
 <div className="w-screen">
   <Image
-    src="/svg/FooterTitle.png"
+    src="/svg/new_footer.jpeg"
     alt="HackOn 2.0"
     width={1920}
     height={140}
