@@ -3,7 +3,7 @@
 import { client, GDGCDatabase, HackOnTimerCollection } from "@/config/appwrite";
 import { ListCollectionData } from "@/Services/Appwrite";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const HackOnCountdown = ({ startTime = "19:53", endTime = "21:00" }) => {
   const [formattedTime, setFormattedTime] = useState("00:00:00");
@@ -78,6 +78,30 @@ const HackOnCountdown = ({ startTime = "19:53", endTime = "21:00" }) => {
 
 return (
   <div className="relative w-full min-h-screen bg-black overflow-hidden">
+
+    {/* Header Logos */}
+    <div className="absolute top-0 left-0 right-0 w-full flex justify-between items-start p-4 sm:p-8 z-50">
+      <div className="w-32 sm:w-40 md:w-56">
+        <Image
+          src="/svg/gdg log.jpeg"
+          alt="GDG Logo"
+          width={400}
+          height={200}
+          className="w-full h-auto object-contain rounded-xl"
+          priority
+        />
+      </div>
+      <div className="w-16 sm:w-20 md:w-28">
+        <Image
+          src="/svg/grass.jpeg"
+          alt="Grass Logo"
+          width={200}
+          height={200}
+          className="w-full h-auto object-contain rounded-xl"
+          priority
+        />
+      </div>
+    </div>
 
     {/* Grid Background */}
     <div
