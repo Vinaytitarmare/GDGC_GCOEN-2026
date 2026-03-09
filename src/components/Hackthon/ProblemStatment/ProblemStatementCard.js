@@ -1,9 +1,8 @@
 "use client";
-import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export function ProblemStatementCard({ problem }) {
   const [expanded, setExpanded] = useState(false);
@@ -59,6 +58,17 @@ export function ProblemStatementCard({ problem }) {
                 </button>
               </div>
             </>
+          )}
+          {problem.pdf && (
+            <div className="mt-3">
+              <p className="mb-2">Download Reference</p>
+              <button
+                className="p-1 rounded-full px-3 text-xs bg-gray-100"
+                onClick={() => window.open(problem.pdf, "_blank")}
+              >
+                View PDF
+              </button>
+            </div>
           )}
         </div>
 

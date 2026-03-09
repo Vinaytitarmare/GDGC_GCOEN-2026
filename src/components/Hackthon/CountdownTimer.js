@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 const HackOnCountdown = ({ startTime = "09:00", endTime = "17:00" }) => {
-  const [formattedTime, setFormattedTime] = useState("00:00:00");
+  const [formattedTime, setFormattedTime] = useState("08:00:00");
   const [clockDetail, setClockDetail] = useState(null);
 
   // Convert HH:MM to today's Date object
