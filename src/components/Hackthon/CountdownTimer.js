@@ -5,7 +5,7 @@ import { ListCollectionData } from "@/Services/Appwrite";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 
-const HackOnCountdown = ({ startTime = "20:00", endTime = "21:00" }) => {
+const HackOnCountdown = ({ startTime = "19:53", endTime = "21:00" }) => {
   const [formattedTime, setFormattedTime] = useState("00:00:00");
   const [clockDetail, setClockDetail] = useState(null);
 
