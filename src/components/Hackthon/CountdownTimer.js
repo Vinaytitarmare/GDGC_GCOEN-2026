@@ -170,7 +170,7 @@ return (
     alt="HackOn 2.0"
     width={1920}
     height={140}
-    className="w-full mt-[-20px] h-[80px] sm:h-[100px] md:h-[120px] object-contain"
+    className="w-full mt-[-30px] h-[80px] sm:h-[100px] md:h-[120px] object-contain"
     priority
   />
 </div>
